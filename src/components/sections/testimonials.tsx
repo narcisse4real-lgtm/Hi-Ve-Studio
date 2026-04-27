@@ -57,7 +57,7 @@ export function TestimonialsSection({
       </div>
 
       <Reveal className={compact ? "mt-10" : "mt-14"} amount={0.05}>
-        <Marquee speed={compact ? "normal" : "slow"} pauseOnHover>
+        <Marquee speed={compact ? "normal" : "slow"} pauseOnHover reverse>
           {testimonials.map((t, i) => (
             <figure
               key={t.name + i}
