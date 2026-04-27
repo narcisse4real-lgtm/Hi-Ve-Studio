@@ -61,6 +61,7 @@ export default function HomePage() {
       <SectionIndicator sections={homeSections} />
       <main id="main">
         <Hero />
+        <TestimonialsSection variant="compact" />
         <ConstatSection />
         <SolutionSection />
         <ShowroomSection />
@@ -71,7 +72,6 @@ export default function HomePage() {
         <PourquoiSection />
         <FaqSection />
         <AuditSection />
-        <TestimonialsSection />
       </main>
       <Footer />
       <MobileCTA />

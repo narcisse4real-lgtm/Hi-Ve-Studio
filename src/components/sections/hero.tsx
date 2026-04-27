@@ -145,18 +145,22 @@ export function Hero() {
 
       {/* Logos marquee */}
       <div className="mt-20 md:mt-28">
-        <div className="container mb-6">
-          <motion.p
+        <div className="container mb-8">
+          <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-[11px] uppercase tracking-label text-gris-chaud text-center"
+            className="flex items-center justify-center gap-3"
           >
-            Pensé pour les entreprises locales qui se développent
-          </motion.p>
+            <span className="h-px w-8 bg-sable" />
+            <span className="text-[11px] uppercase tracking-label text-gris-chaud">
+              Pensé pour les entreprises locales qui se développent
+            </span>
+            <span className="h-px w-8 bg-sable" />
+          </motion.div>
         </div>
-        <Marquee speed="slow">
+        <Marquee speed="normal">
           {clientLogos.map((name) => (
             <div
               key={name}
@@ -167,7 +171,7 @@ export function Hero() {
                 filled
                 className="text-miel/60 transition-colors group-hover:text-miel"
               />
-              <span className="font-serif text-xl md:text-[26px] text-encre/40 transition-colors group-hover:text-encre">
+              <span className="font-serif text-xl md:text-[26px] text-encre/45 transition-colors group-hover:text-encre">
                 {name}
               </span>
             </div>

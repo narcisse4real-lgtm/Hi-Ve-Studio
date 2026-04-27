@@ -87,6 +87,17 @@
   }
 }
 
+/* Marquee — keyframes declared explicitly outside @layer so they're always
+   emitted in the final stylesheet regardless of Tailwind's content scanning. */
+@keyframes hive-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
@@ -106,14 +117,21 @@
       black 92%,
       transparent 100%
     );
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 8%,
+      black 92%,
+      transparent 100%
+    );
   }
 
-  /* Marquee with pause-on-hover support */
-  .marquee-track {
-    @apply flex w-max gap-12;
-    animation: marquee 40s linear infinite;
+  .animate-hive-marquee {
+    animation: hive-marquee var(--marquee-duration, 50s) linear infinite;
+    animation-direction: var(--marquee-direction, normal);
   }
-  .marquee-track:hover {
+
+  .animate-hive-marquee:hover {
     animation-play-state: paused;
   }
 
