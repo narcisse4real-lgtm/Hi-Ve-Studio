@@ -7,6 +7,7 @@ import { z } from "zod";
 import { Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Hexagon } from "@/components/ui/hexagon";
+import { Magnetic } from "@/components/ui/magnetic";
 import { cn } from "@/lib/utils";
 
 const auditSchema = z.object({
@@ -272,16 +273,18 @@ export function AuditForm({ compact = false }: { compact?: boolean }) {
         <p className="text-[12.5px] text-gris-chaud max-w-md">
           Sans engagement. Sans relance commerciale. Réponse sous 48h.
         </p>
-        <Button type="submit" disabled={isSubmitting} showArrow={!isSubmitting}>
-          {isSubmitting ? (
-            <span className="inline-flex items-center gap-2">
-              <Loader2 className="size-4 animate-spin" />
-              Envoi…
-            </span>
-          ) : (
-            "Recevoir mon audit gratuit"
-          )}
-        </Button>
+        <Magnetic strength={0.22}>
+          <Button type="submit" disabled={isSubmitting} showArrow={!isSubmitting}>
+            {isSubmitting ? (
+              <span className="inline-flex items-center gap-2">
+                <Loader2 className="size-4 animate-spin" />
+                Envoi…
+              </span>
+            ) : (
+              "Recevoir mon audit gratuit"
+            )}
+          </Button>
+        </Magnetic>
       </div>
     </form>
   );

@@ -3,6 +3,8 @@ import "./globals.css";
 import { cormorant, fraunces, inter, italiana, tenorSans } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import { SmoothScrollProvider } from "@/components/providers/smooth-scroll-provider";
+import { CustomCursor } from "@/components/ui/custom-cursor";
+import { ScrollProgress } from "@/components/ui/scroll-progress";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://hi-ve.fr"),
@@ -62,7 +64,11 @@ export default function RootLayout({
       )}
     >
       <body className="font-sans antialiased bg-ivoire text-encre">
-        <SmoothScrollProvider>{children}</SmoothScrollProvider>
+        <SmoothScrollProvider>
+          <ScrollProgress />
+          {children}
+          <CustomCursor />
+        </SmoothScrollProvider>
       </body>
     </html>
   );

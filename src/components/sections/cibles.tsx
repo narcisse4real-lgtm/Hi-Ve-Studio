@@ -4,7 +4,7 @@ import { cibles } from "@/content/home";
 
 export function CiblesSection() {
   return (
-    <section className="relative py-24 md:py-36 bg-ivoire">
+    <section id="cibles" className="relative py-24 md:py-36 bg-ivoire">
       <div className="container">
         <div className="max-w-3xl">
           <Reveal>

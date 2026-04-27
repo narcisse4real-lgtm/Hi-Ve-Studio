@@ -5,7 +5,7 @@ import { pourquoi } from "@/content/home";
 
 export function PourquoiSection() {
   return (
-    <section className="relative py-24 md:py-36 bg-ivoire">
+    <section id="pourquoi" className="relative py-24 md:py-36 bg-ivoire">
       <div className="container">
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-5">

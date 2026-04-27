@@ -14,7 +14,21 @@ import { PourquoiSection } from "@/components/sections/pourquoi";
 import { FaqSection } from "@/components/sections/faq";
 import { AuditSection } from "@/components/sections/audit-section";
 import { TestimonialsSection } from "@/components/sections/testimonials";
+import { SectionIndicator } from "@/components/ui/section-indicator";
 import { siteConfig } from "@/content/site";
+
+const homeSections = [
+  { id: "constat", number: "01", label: "Le constat" },
+  { id: "solution", number: "02", label: "Notre approche" },
+  { id: "showroom", number: "03", label: "Showroom" },
+  { id: "transformation", number: "04", label: "Transformation" },
+  { id: "cibles", number: "05", label: "Pour qui" },
+  { id: "methode", number: "06", label: "Méthode" },
+  { id: "tarifs", number: "07", label: "Tarifs" },
+  { id: "pourquoi", number: "08", label: "Pourquoi nous" },
+  { id: "faq", number: "09", label: "FAQ" },
+  { id: "audit-gratuit", number: "10", label: "Audit" },
+];
 
 export const metadata: Metadata = {
   title: "Hi-Ve — Sites vitrines pour artisans, PME et professions libérales",
@@ -44,6 +58,7 @@ export default function HomePage() {
   return (
     <>
       <Header />
+      <SectionIndicator sections={homeSections} />
       <main id="main">
         <Hero />
         <ConstatSection />

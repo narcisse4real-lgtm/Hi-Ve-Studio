@@ -1,7 +1,11 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Calendar, Clock, MapPin } from "lucide-react";
 import { DemoBanner } from "@/components/demo/demo-banner";
+import { Counter } from "@/components/ui/counter";
+import { Parallax } from "@/components/ui/parallax";
 
 const prestations = {
   Visage: [
@@ -134,16 +138,16 @@ export default function MaisonAvelinePage() {
         <section className="pt-16 md:pt-24 pb-20 md:pb-28">
           <div className="container grid gap-14 lg:grid-cols-12 items-center">
             <div className="lg:col-span-6 lg:order-2">
-              <div className="aspect-[4/5] rounded-md overflow-hidden relative">
+              <Parallax distance={60} className="aspect-[4/5] rounded-md overflow-hidden relative">
                 <Image
                   src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80"
                   alt="Soin du visage premium, ambiance feutrée"
                   fill
-                  className="object-cover"
+                  className="object-cover scale-110"
                   sizes="(min-width:1024px) 50vw, 100vw"
                   priority
                 />
-              </div>
+              </Parallax>
             </div>
             <div className="lg:col-span-6 lg:order-1">
               <p className="text-[11px] uppercase tracking-[0.28em]" style={{ color: "#C8956D" }}>
@@ -179,13 +183,13 @@ export default function MaisonAvelinePage() {
               </div>
               <div className="mt-12 grid grid-cols-3 gap-6 max-w-md border-t border-[#3A2A24]/15 pt-8">
                 {[
-                  { value: "10", label: "ans" },
-                  { value: "5", label: "cabines" },
-                  { value: "32", label: "soins" },
+                  { value: 10, label: "ans" },
+                  { value: 5, label: "cabines" },
+                  { value: 32, label: "soins" },
                 ].map((s) => (
                   <div key={s.label}>
                     <p className="font-[family-name:var(--font-italiana)] text-4xl" style={{ color: "#C8956D" }}>
-                      {s.value}
+                      <Counter to={s.value} />
                     </p>
                     <p className="text-[11px] uppercase tracking-[0.2em] mt-1" style={{ color: "#5C453B" }}>
                       {s.label}

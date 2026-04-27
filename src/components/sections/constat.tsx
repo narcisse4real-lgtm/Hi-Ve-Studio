@@ -1,6 +1,7 @@
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { Reveal } from "@/components/ui/reveal";
 import { Hexagon } from "@/components/ui/hexagon";
+import { TiltCard } from "@/components/ui/tilt-card";
 import { constatItems } from "@/content/home";
 
 export function ConstatSection() {
@@ -32,23 +33,25 @@ export function ConstatSection() {
         <div className="mt-16 md:mt-24 grid gap-5 md:grid-cols-3">
           {constatItems.map((item, i) => (
             <Reveal key={item.title} delay={i * 0.08}>
-              <article className="group relative h-full bg-white border-[0.5px] border-sable rounded-2xl p-7 md:p-8 transition-all duration-300 hover:border-miel hover:-translate-y-1 hover:shadow-[0_20px_40px_-25px_rgba(184,115,44,0.4)]">
-                <div className="flex items-start justify-between mb-8">
-                  <span className="text-[11px] uppercase tracking-label text-gris-chaud tabular-nums">
-                    Symptôme {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <Hexagon
-                    size={14}
-                    className="text-sable group-hover:text-miel transition-colors"
-                  />
-                </div>
-                <h3 className="font-serif text-2xl md:text-[26px] font-medium leading-tight">
-                  {item.title}
-                </h3>
-                <p className="mt-4 text-[15px] leading-[1.65] text-gris-chaud">
-                  {item.body}
-                </p>
-              </article>
+              <TiltCard className="group h-full" max={4}>
+                <article className="relative h-full bg-white border-[0.5px] border-sable rounded-2xl p-7 md:p-8 transition-colors duration-300 group-hover:border-miel">
+                  <div className="flex items-start justify-between mb-8">
+                    <span className="text-[11px] uppercase tracking-label text-gris-chaud tabular-nums">
+                      Symptôme {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <Hexagon
+                      size={14}
+                      className="text-sable group-hover:text-miel transition-colors"
+                    />
+                  </div>
+                  <h3 className="font-serif text-2xl md:text-[26px] font-medium leading-tight">
+                    {item.title}
+                  </h3>
+                  <p className="mt-4 text-[15px] leading-[1.65] text-gris-chaud">
+                    {item.body}
+                  </p>
+                </article>
+              </TiltCard>
             </Reveal>
           ))}
         </div>

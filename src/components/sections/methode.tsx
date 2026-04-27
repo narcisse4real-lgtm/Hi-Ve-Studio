@@ -5,7 +5,7 @@ import { methode } from "@/content/home";
 
 export function MethodeSection() {
   return (
-    <section id="methode" className="relative py-24 md:py-36 bg-creme/40">
+    <section id="methode" className="relative py-24 md:py-36 bg-creme/50">
       <div className="container">
         <div className="max-w-3xl">
           <Reveal>

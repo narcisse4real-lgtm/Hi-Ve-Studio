@@ -1,21 +1,27 @@
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { Reveal } from "@/components/ui/reveal";
+import { SplitText } from "@/components/ui/split-text";
 import { Hexagon } from "@/components/ui/hexagon";
 import { piliers } from "@/content/home";
 
 export function SolutionSection() {
   return (
-    <section id="solution" className="relative py-24 md:py-36 bg-gradient-to-b from-ivoire to-creme/40">
+    <section id="solution" className="relative py-24 md:py-36 bg-ivoire">
       <div className="container">
         <div className="max-w-3xl">
           <Reveal>
             <Eyebrow number="02">Notre approche</Eyebrow>
           </Reveal>
-          <Reveal delay={0.05}>
-            <h2 className="heading-h2 mt-6 text-[clamp(2rem,4.5vw,3rem)] text-balance">
-              Une vitrine digitale qui donne envie de vous choisir.
-            </h2>
-          </Reveal>
+          <SplitText
+            as="h2"
+            className="heading-h2 mt-6 text-[clamp(2rem,4.5vw,3rem)] text-balance"
+            stagger={0.05}
+            duration={0.85}
+            highlight={[5, 6, 7, 8]}
+            highlightClass="italic text-miel font-serif"
+          >
+            Une vitrine digitale qui donne envie de vous choisir.
+          </SplitText>
           <Reveal delay={0.1}>
             <p className="mt-6 text-lg leading-[1.65] text-gris-chaud max-w-2xl">
               Chez Hi-Ve, un site n'est pas une carte de visite. C'est un outil

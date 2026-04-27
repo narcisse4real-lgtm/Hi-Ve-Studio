@@ -1,7 +1,11 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, MapPin, Phone, Mail, Star } from "lucide-react";
 import { DemoBanner } from "@/components/demo/demo-banner";
+import { Counter } from "@/components/ui/counter";
+import { Parallax } from "@/components/ui/parallax";
 
 const realisations = [
   {
@@ -158,16 +162,16 @@ export default function AtelierMorelPage() {
               </div>
             </div>
             <div className="lg:col-span-6 relative">
-              <div className="aspect-[4/5] relative rounded-md overflow-hidden">
+              <Parallax distance={60} className="aspect-[4/5] relative rounded-md overflow-hidden">
                 <Image
                   src="https://images.unsplash.com/photo-1565538810643-b5bdb714032a?auto=format&fit=crop&w=1200&q=80"
                   alt="Atelier de menuiserie, copeaux et bois massif"
                   fill
-                  className="object-cover"
+                  className="object-cover scale-110"
                   sizes="(min-width:1024px) 50vw, 100vw"
                   priority
                 />
-              </div>
+              </Parallax>
               <div
                 className="absolute -bottom-6 -left-6 hidden md:flex items-center gap-3 px-5 py-4 rounded-md"
                 style={{ background: "#EDE3D2" }}
@@ -177,7 +181,7 @@ export default function AtelierMorelPage() {
                     className="font-[family-name:var(--font-cormorant)] text-3xl font-medium leading-none"
                     style={{ color: "#A8482C" }}
                   >
-                    62
+                    <Counter to={62} />
                   </p>
                   <p className="text-[10px] uppercase tracking-[0.18em] mt-1">
                     ans d'atelier
@@ -189,7 +193,7 @@ export default function AtelierMorelPage() {
                     className="font-[family-name:var(--font-cormorant)] text-3xl font-medium leading-none"
                     style={{ color: "#A8482C" }}
                   >
-                    420
+                    <Counter to={420} />
                   </p>
                   <p className="text-[10px] uppercase tracking-[0.18em] mt-1">
                     pièces livrées
@@ -297,23 +301,39 @@ export default function AtelierMorelPage() {
               </p>
 
               <dl className="mt-10 grid grid-cols-3 gap-6 border-t border-[#2B1F14]/15 pt-8">
-                {[
-                  { value: "100%", label: "Bois français" },
-                  { value: "8-12", label: "semaines" },
-                  { value: "10 ans", label: "garantie" },
-                ].map((s) => (
-                  <div key={s.label}>
-                    <dt
-                      className="font-[family-name:var(--font-cormorant)] text-3xl md:text-4xl font-medium"
-                      style={{ color: "#A8482C" }}
-                    >
-                      {s.value}
-                    </dt>
-                    <dd className="text-[11px] uppercase tracking-[0.18em] mt-1.5" style={{ color: "#5C4D3D" }}>
-                      {s.label}
-                    </dd>
-                  </div>
-                ))}
+                <div>
+                  <dt
+                    className="font-[family-name:var(--font-cormorant)] text-3xl md:text-4xl font-medium"
+                    style={{ color: "#A8482C" }}
+                  >
+                    <Counter to={100} suffix="%" />
+                  </dt>
+                  <dd className="text-[11px] uppercase tracking-[0.18em] mt-1.5" style={{ color: "#5C4D3D" }}>
+                    Bois français
+                  </dd>
+                </div>
+                <div>
+                  <dt
+                    className="font-[family-name:var(--font-cormorant)] text-3xl md:text-4xl font-medium"
+                    style={{ color: "#A8482C" }}
+                  >
+                    8-12
+                  </dt>
+                  <dd className="text-[11px] uppercase tracking-[0.18em] mt-1.5" style={{ color: "#5C4D3D" }}>
+                    semaines
+                  </dd>
+                </div>
+                <div>
+                  <dt
+                    className="font-[family-name:var(--font-cormorant)] text-3xl md:text-4xl font-medium"
+                    style={{ color: "#A8482C" }}
+                  >
+                    <Counter to={10} suffix=" ans" />
+                  </dt>
+                  <dd className="text-[11px] uppercase tracking-[0.18em] mt-1.5" style={{ color: "#5C4D3D" }}>
+                    garantie
+                  </dd>
+                </div>
               </dl>
             </div>
           </div>

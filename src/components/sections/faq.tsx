@@ -12,7 +12,7 @@ export function FaqSection() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section className="relative py-24 md:py-36 bg-ivoire">
+    <section id="faq" className="relative py-24 md:py-36 bg-ivoire">
       <div className="container">
         <div className="grid gap-14 lg:grid-cols-12">
           <div className="lg:col-span-4">

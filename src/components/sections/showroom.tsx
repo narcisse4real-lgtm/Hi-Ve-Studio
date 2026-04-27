@@ -2,6 +2,8 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { Reveal } from "@/components/ui/reveal";
+import { SplitText } from "@/components/ui/split-text";
+import { TiltCard } from "@/components/ui/tilt-card";
 import { BrowserFrame } from "@/components/ui/browser-frame";
 import { AtelierMockup } from "@/components/mockups/atelier-mockup";
 import { LyriaMockup } from "@/components/mockups/lyria-mockup";
@@ -22,11 +24,14 @@ export function ShowroomSection() {
           <Reveal>
             <Eyebrow number="03">Showroom Hi-Ve</Eyebrow>
           </Reveal>
-          <Reveal delay={0.05}>
-            <h2 className="heading-h2 mt-6 text-[clamp(2rem,4.5vw,3rem)] text-balance">
-              Trois métiers, trois vitrines, trois résultats.
-            </h2>
-          </Reveal>
+          <SplitText
+            as="h2"
+            className="heading-h2 mt-6 text-[clamp(2rem,4.5vw,3rem)] text-balance"
+            stagger={0.05}
+            duration={0.85}
+          >
+            Trois métiers, trois vitrines, trois résultats.
+          </SplitText>
           <Reveal delay={0.1}>
             <p className="mt-6 text-lg leading-[1.65] text-gris-chaud max-w-2xl">
               Trois projets de démonstration, conçus comme de vrais sites
@@ -41,9 +46,10 @@ export function ShowroomSection() {
             const Mockup = mockups[demo.slug];
             return (
               <Reveal key={demo.slug} delay={i * 0.1}>
-                <article className="group h-full">
+                <TiltCard className="group h-full" max={5}>
+                <article className="h-full">
                   <Link href={demo.url} className="block h-full">
-                    <div className="relative overflow-hidden rounded-2xl bg-ivoire border-[0.5px] border-sable transition-all duration-500 group-hover:-translate-y-1 group-hover:border-miel group-hover:shadow-[0_30px_60px_-30px_rgba(184,115,44,0.4)] h-full flex flex-col">
+                    <div className="relative overflow-hidden rounded-2xl bg-ivoire border-[0.5px] border-sable transition-colors duration-500 group-hover:border-miel group-hover:shadow-[0_30px_60px_-30px_rgba(184,115,44,0.4)] h-full flex flex-col">
                       <div className="p-5">
                         <BrowserFrame url={`${demo.slug}.fr`}>
                           <Mockup />
@@ -82,6 +88,7 @@ export function ShowroomSection() {
                     </div>
                   </Link>
                 </article>
+                </TiltCard>
               </Reveal>
             );
           })}

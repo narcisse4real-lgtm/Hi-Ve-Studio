@@ -124,7 +124,7 @@ export function BeforeAfterSection() {
   }, [dragging, updateFromClientX]);
 
   return (
-    <section className="relative py-24 md:py-36 bg-ivoire">
+    <section id="transformation" className="relative py-24 md:py-36 bg-ivoire">
       <div className="container">
         <div className="max-w-3xl">
           <Reveal>
