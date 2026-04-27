@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-ivoire: 248 244 237;
+    --color-creme: 241 235 223;
+    --color-sable: 226 216 198;
+    --color-miel: 184 115 44;
+    --color-encre: 26 24 20;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background-color: #f8f4ed;
+    color: #1a1814;
+    font-feature-settings: "ss01", "ss02", "cv11";
+  }
+
+  ::selection {
+    background-color: #b8732c;
+    color: #f8f4ed;
+  }
+
+  /* Focus visible accessibility */
+  :focus-visible {
+    outline: 2px solid #b8732c;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  *:focus:not(:focus-visible) {
+    outline: none;
+  }
+}
+
+@layer components {
+  .label-eyebrow {
+    @apply text-[11px] md:text-xs font-medium uppercase tracking-label text-gris-chaud;
+  }
+
+  .heading-display {
+    @apply font-serif font-medium leading-[1.05] tracking-[-0.02em];
+  }
+
+  .heading-h2 {
+    @apply font-serif font-medium leading-[1.1] tracking-[-0.015em];
+  }
+
+  .body-large {
+    @apply text-lg md:text-xl leading-[1.6] text-gris-chaud;
+  }
+
+  .divider-hex {
+    @apply relative flex items-center justify-center py-12;
+  }
+
+  .divider-hex::before,
+  .divider-hex::after {
+    content: "";
+    @apply h-px flex-1 bg-sable;
+  }
+
+  .divider-hex svg {
+    @apply mx-4;
+  }
+
+  /* Smooth scroll lock for Lenis */
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  .mask-fade-r {
+    mask-image: linear-gradient(to right, black 80%, transparent 100%);
+  }
+  .mask-fade-edges {
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 8%,
+      black 92%,
+      transparent 100%
+    );
+  }
+
+  /* Marquee with pause-on-hover support */
+  .marquee-track {
+    @apply flex w-max gap-12;
+    animation: marquee 40s linear infinite;
+  }
+  .marquee-track:hover {
+    animation-play-state: paused;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
