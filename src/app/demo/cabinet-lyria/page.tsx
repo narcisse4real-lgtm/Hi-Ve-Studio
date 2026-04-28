@@ -84,7 +84,7 @@ export default function CabinetLyriaPage() {
         accent="#5C7A99"
       />
 
-      <div className="font-[family-name:var(--font-inter)]" style={{ color: "#1B2B3F" }}>
+      <div className="font-[family-name:var(--font-geist-sans)]" style={{ color: "#1B2B3F" }}>
         {/* Header */}
         <header className="sticky top-0 z-40 bg-white/85 backdrop-blur-md border-b border-[#1B2B3F]/8">
           <div className="container flex items-center justify-between h-16">

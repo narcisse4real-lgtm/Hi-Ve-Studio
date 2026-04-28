@@ -1,17 +1,14 @@
 import {
   Cormorant_Garamond,
   Fraunces,
-  Inter,
   Italiana,
   Tenor_Sans,
 } from "next/font/google";
+import { GeistSans } from "geist/font/sans";
 
-export const inter = Inter({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-inter",
-  display: "swap",
-});
+// Sans default — Geist (taste-skill: Inter is banned for the "premium" vibe).
+// The `geist` package self-hosts the font so it works regardless of next/font version.
+export const sans = GeistSans;
 
 export const fraunces = Fraunces({
   subsets: ["latin"],

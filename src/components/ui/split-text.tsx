@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
+import { Fragment } from "react";
 import { cn } from "@/lib/utils";
 
 interface SplitTextProps {
@@ -10,7 +11,6 @@ interface SplitTextProps {
   delay?: number;
   stagger?: number;
   duration?: number;
-  perLine?: boolean;
   /** Highlight specific words by index (0-based across whole string) */
   highlight?: number[];
   highlightClass?: string;
@@ -24,33 +24,42 @@ export function SplitText({
   stagger = 0.05,
   duration = 0.8,
   highlight = [],
-  highlightClass = "italic text-miel",
+  highlightClass = "italic text-miel font-serif",
 }: SplitTextProps) {
   const reduced = useReducedMotion();
   const Tag = motion[as];
 
   const words = children.split(/(\s+)/);
-
-  if (reduced) {
-    return <Tag className={className}>{children}</Tag>;
-  }
-
   let wordIndex = -1;
 
+  // Render the highlights even in the reduced-motion path so the editorial
+  // hierarchy survives.
   return (
     <Tag
       className={cn(className)}
-      initial="hidden"
-      whileInView="visible"
+      initial={reduced ? false : "hidden"}
+      whileInView={reduced ? undefined : "visible"}
       viewport={{ once: true, amount: 0.2 }}
       aria-label={children}
     >
       {words.map((token, i) => {
         if (/^\s+$/.test(token)) {
-          return <span key={i}>{token}</span>;
+          return <Fragment key={i}>{token}</Fragment>;
         }
         wordIndex += 1;
         const isHighlighted = highlight.includes(wordIndex);
+
+        if (reduced) {
+          return (
+            <span
+              key={i}
+              className={cn(isHighlighted && highlightClass)}
+            >
+              {token}
+            </span>
+          );
+        }
+
         return (
           <span
             key={i}

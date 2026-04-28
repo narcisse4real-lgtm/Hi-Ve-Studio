@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { inter, tenorSans } from "@/lib/fonts";
+import { sans, tenorSans } from "@/lib/fonts";
 
 export const metadata: Metadata = {
   title: "Cabinet Lyria — Ostéopathie (démo)",
@@ -14,7 +14,7 @@ export default function LyriaLayout({
 }) {
   return (
     <div
-      className={`${tenorSans.variable} ${inter.variable}`}
+      className={`${tenorSans.variable} ${sans.variable}`}
       style={{ background: "#FFFFFF", color: "#1B2B3F" }}
     >
       {children}

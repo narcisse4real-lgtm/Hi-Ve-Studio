@@ -107,7 +107,7 @@ export default function MaisonAvelinePage() {
         accent="#C8956D"
       />
 
-      <div className="font-[family-name:var(--font-inter)]" style={{ color: "#3A2A24" }}>
+      <div className="font-[family-name:var(--font-geist-sans)]" style={{ color: "#3A2A24" }}>
         {/* Header */}
         <header className="sticky top-0 z-40 bg-[#F9F2EC]/85 backdrop-blur-md border-b border-[#3A2A24]/8">
           <div className="container flex items-center justify-between h-16">

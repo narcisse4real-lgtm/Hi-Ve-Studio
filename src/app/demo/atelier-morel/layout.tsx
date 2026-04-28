@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { cormorant, inter } from "@/lib/fonts";
+import { cormorant, sans } from "@/lib/fonts";
 
 export const metadata: Metadata = {
   title: "Atelier Morel — Menuiserie sur-mesure (démo)",
@@ -14,7 +14,7 @@ export default function AtelierLayout({
 }) {
   return (
     <div
-      className={`${cormorant.variable} ${inter.variable}`}
+      className={`${cormorant.variable} ${sans.variable}`}
       style={{ background: "#F5F0E8", color: "#2B1F14" }}
     >
       {children}

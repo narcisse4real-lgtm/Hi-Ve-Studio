@@ -85,7 +85,7 @@ export default function AtelierMorelPage() {
         accent="#A8482C"
       />
 
-      <div className="font-[family-name:var(--font-inter)]">
+      <div className="font-[family-name:var(--font-geist-sans)]">
         {/* Header */}
         <header className="sticky top-0 z-40 bg-[#F5F0E8]/85 backdrop-blur-md border-b border-[#2B1F14]/8">
           <div className="container flex items-center justify-between h-16">

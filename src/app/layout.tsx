@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { cormorant, fraunces, inter, italiana, tenorSans } from "@/lib/fonts";
+import { cormorant, fraunces, sans, italiana, tenorSans } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import { SmoothScrollProvider } from "@/components/providers/smooth-scroll-provider";
-import { CustomCursor } from "@/components/ui/custom-cursor";
 import { ScrollProgress } from "@/components/ui/scroll-progress";
 
 export const metadata: Metadata = {
@@ -56,7 +55,7 @@ export default function RootLayout({
     <html
       lang="fr"
       className={cn(
-        inter.variable,
+        sans.variable,
         fraunces.variable,
         cormorant.variable,
         tenorSans.variable,
@@ -67,7 +66,6 @@ export default function RootLayout({
         <SmoothScrollProvider>
           <ScrollProgress />
           {children}
-          <CustomCursor />
         </SmoothScrollProvider>
       </body>
     </html>

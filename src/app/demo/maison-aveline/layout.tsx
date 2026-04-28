@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { inter, italiana } from "@/lib/fonts";
+import { sans, italiana } from "@/lib/fonts";
 
 export const metadata: Metadata = {
   title: "Maison Aveline — Institut beauté & bien-être (démo)",
@@ -14,7 +14,7 @@ export default function AvelineLayout({
 }) {
   return (
     <div
-      className={`${italiana.variable} ${inter.variable}`}
+      className={`${italiana.variable} ${sans.variable}`}
       style={{ background: "#F9F2EC", color: "#3A2A24" }}
     >
       {children}
