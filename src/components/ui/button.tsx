@@ -16,6 +16,10 @@ const buttonVariants = cva(
           "bg-encre text-ivoire hover:bg-miel pl-4 pr-5 py-3 text-[14px] tracking-[0.01em]",
         secondary:
           "bg-transparent text-encre border-[0.5px] border-encre hover:bg-encre hover:text-ivoire pl-4 pr-5 py-3 text-[14px]",
+        studio:
+          "bg-ivoire/12 text-ivoire border-[0.5px] border-ivoire/15 hover:bg-ivoire hover:text-miel pl-4 pr-5 py-3 text-[14px]",
+        studioSolid:
+          "bg-ivoire text-miel hover:bg-miel-clair hover:text-encre pl-4 pr-5 py-3 text-[14px]",
         ghost: "text-encre hover:text-miel underline-offset-4 hover:underline",
       },
       size: {
@@ -76,6 +80,8 @@ export function Button(props: ButtonProps) {
             "transition-colors",
             variant === "primary"
               ? "text-miel-clair group-hover:text-ivoire"
+              : variant === "studio" || variant === "studioSolid"
+                ? "text-miel-clair group-hover:text-encre"
               : "text-miel",
           )}
         />
@@ -87,6 +93,8 @@ export function Button(props: ButtonProps) {
             "size-3.5 transition-transform duration-300 group-hover:translate-x-1",
             variant === "primary"
               ? "text-miel-clair group-hover:text-ivoire"
+              : variant === "studio" || variant === "studioSolid"
+                ? "text-miel-clair group-hover:text-encre"
               : "text-miel",
           )}
           aria-hidden="true"

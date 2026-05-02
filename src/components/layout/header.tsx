@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Hexagon } from "@/components/ui/hexagon";
@@ -11,6 +12,8 @@ import { cn } from "@/lib/utils";
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const darkHero = pathname === "/" && !scrolled && !open;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -43,7 +46,12 @@ export function Header() {
             size={18}
             className="text-miel transition-transform group-hover:rotate-30"
           />
-          <span className="font-serif text-[22px] md:text-2xl font-medium text-encre tracking-tight">
+          <span
+            className={cn(
+              "font-serif text-[22px] md:text-2xl font-medium tracking-tight transition-colors",
+              darkHero ? "text-ivoire" : "text-encre",
+            )}
+          >
             Hi-Ve
           </span>
         </Link>
@@ -53,7 +61,12 @@ export function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className="text-[14px] text-encre/85 hover:text-encre transition-colors relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-px after:bg-miel after:w-0 hover:after:w-full after:transition-all"
+              className={cn(
+                "text-[14px] transition-colors relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-px after:bg-miel after:w-0 hover:after:w-full after:transition-all",
+                darkHero
+                  ? "text-ivoire/78 hover:text-ivoire"
+                  : "text-encre/85 hover:text-encre",
+              )}
             >
               {item.label}
             </Link>
@@ -61,14 +74,18 @@ export function Header() {
         </nav>
 
         <div className="hidden md:block">
-          <Button href="/audit-gratuit" size="sm">
+          <Button
+            href="/audit-gratuit"
+            size="sm"
+            variant={darkHero ? "studio" : "primary"}
+          >
             Recevoir mon audit gratuit
           </Button>
         </div>
 
         <button
           type="button"
-          className="md:hidden p-2 -mr-2 text-encre"
+          className={cn("md:hidden p-2 -mr-2", darkHero ? "text-ivoire" : "text-encre")}
           onClick={() => setOpen((o) => !o)}
           aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
           aria-expanded={open}

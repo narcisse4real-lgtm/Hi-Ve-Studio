@@ -56,7 +56,7 @@ export function SectionIndicator({ sections }: SectionIndicatorProps) {
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: 20 }}
           transition={{ duration: 0.4 }}
-          className="hidden lg:flex fixed right-6 top-1/2 -translate-y-1/2 z-30 flex-col items-end gap-3"
+          className="hidden lg:flex fixed right-6 top-1/2 -translate-y-1/2 z-30 flex-col items-end gap-3 rounded-full border-[0.5px] border-sable/70 bg-ivoire/82 px-3 py-4 backdrop-blur-md"
           aria-hidden="true"
         >
           <div className="overflow-hidden h-6">

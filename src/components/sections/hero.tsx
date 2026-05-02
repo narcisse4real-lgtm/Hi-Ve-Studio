@@ -25,17 +25,17 @@ export function Hero() {
   return (
     <section
       ref={ref}
-      className="relative pt-28 md:pt-36 pb-16 md:pb-24 overflow-hidden"
+      className="studio-canvas relative pt-28 md:pt-36 pb-16 md:pb-24 overflow-hidden"
     >
       {/* Decorative floating hexes */}
       <FloatingHex
-        className="absolute -top-24 -right-32 text-encre/[0.06]"
+        className="absolute -top-24 -right-32 text-ivoire/[0.035]"
         size={460}
         rotateDuration={120}
         intensity={0.025}
       />
       <FloatingHex
-        className="hidden lg:block absolute top-[55%] left-[-60px] text-miel/15"
+        className="hidden lg:block absolute top-[55%] left-[-60px] text-miel/30"
         size={120}
         rotateDuration={45}
         intensity={0.06}
@@ -50,26 +50,26 @@ export function Hero() {
       />
 
       <motion.div style={{ opacity }} className="container relative">
-        <div className="grid gap-14 lg:grid-cols-12 lg:gap-12 items-end">
-          <motion.div style={{ y: textY }} className="lg:col-span-7">
+        <div className="mx-auto max-w-6xl">
+          <motion.div style={{ y: textY }} className="mx-auto max-w-5xl text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             >
-              <Eyebrow>
+              <Eyebrow tone="ivoire" className="justify-center">
                 Sites vitrines pour artisans, PME et professions libérales
               </Eyebrow>
             </motion.div>
 
             <SplitText
               as="h1"
-              className="heading-display mt-6 text-[clamp(2.5rem,6.5vw,4.5rem)] text-balance"
+              className="font-serif mt-6 text-[clamp(3.4rem,10vw,7.25rem)] leading-[0.88] tracking-[-0.045em] text-balance"
               stagger={0.04}
               duration={0.9}
               delay={0.15}
               highlight={[5, 6, 7]}
-              highlightClass="text-miel italic font-serif"
+              highlightClass="text-miel-clair italic font-serif"
             >
               Votre savoir-faire mérite une vitrine à sa hauteur.
             </SplitText>
@@ -82,12 +82,12 @@ export function Hero() {
                 delay: 0.55,
                 ease: [0.22, 1, 0.36, 1],
               }}
-              className="mt-7 max-w-xl text-lg md:text-[19px] leading-[1.6] text-gris-chaud text-pretty"
+              className="mx-auto mt-7 max-w-2xl text-lg md:text-[19px] leading-[1.55] text-ivoire/68 text-pretty"
             >
               Hi-Ve crée des sites vitrines modernes pour les entreprises
               locales qui veulent être visibles, crédibles et contactées. Pas
               un site qui existe.{" "}
-              <span className="text-encre">Un site qui travaille pour vous.</span>
+              <span className="text-ivoire">Un site qui travaille pour vous.</span>
             </motion.p>
 
             <motion.div
@@ -98,13 +98,15 @@ export function Hero() {
                 delay: 0.7,
                 ease: [0.22, 1, 0.36, 1],
               }}
-              className="mt-10 flex flex-col sm:flex-row gap-3 sm:items-center"
+              className="mt-10 flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-center"
             >
               <Magnetic strength={0.25}>
-                <Button href="/audit-gratuit">Recevoir mon audit gratuit</Button>
+                <Button href="/audit-gratuit" variant="studioSolid">
+                  Recevoir mon audit gratuit
+                </Button>
               </Magnetic>
               <Magnetic strength={0.18}>
-                <Button href="/showroom" variant="secondary">
+                <Button href="/showroom" variant="studio">
                   Explorer le Showroom
                 </Button>
               </Magnetic>
@@ -114,7 +116,7 @@ export function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.7, delay: 0.85 }}
-              className="mt-5 text-[13px] text-gris-chaud flex items-center gap-2"
+              className="mt-5 text-[13px] text-ivoire/58 flex items-center justify-center gap-2"
             >
               <motion.span
                 animate={{ rotate: 360 }}
@@ -136,9 +138,9 @@ export function Hero() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 0.9, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
             style={{ y: visualY }}
-            className="lg:col-span-5"
+            className="mx-auto mt-14 w-full max-w-5xl rounded-lg border-[0.5px] border-ivoire/10 bg-ivoire/[0.035] p-3 md:p-5"
           >
-            <HeroCarousel />
+            <HeroCarousel tone="dark" />
           </motion.div>
         </div>
       </motion.div>
@@ -153,11 +155,11 @@ export function Hero() {
             transition={{ duration: 0.6 }}
             className="flex items-center justify-center gap-3"
           >
-            <span className="h-px w-8 bg-sable" />
-            <span className="text-[11px] uppercase tracking-label text-gris-chaud">
+            <span className="h-px w-8 bg-ivoire/14" />
+            <span className="text-[11px] uppercase tracking-label text-ivoire/48">
               Pensé pour les entreprises locales qui se développent
             </span>
-            <span className="h-px w-8 bg-sable" />
+            <span className="h-px w-8 bg-ivoire/14" />
           </motion.div>
         </div>
         <Marquee speed="normal">
@@ -169,9 +171,9 @@ export function Hero() {
               <Hexagon
                 size={11}
                 filled
-                className="text-miel/60 transition-colors group-hover:text-miel"
+                className="text-miel/70 transition-colors group-hover:text-miel-clair"
               />
-              <span className="font-serif text-xl md:text-[26px] text-encre/45 transition-colors group-hover:text-encre">
+              <span className="font-serif text-xl md:text-[26px] text-ivoire/32 transition-colors group-hover:text-ivoire">
                 {name}
               </span>
             </div>

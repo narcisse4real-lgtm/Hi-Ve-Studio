@@ -17,7 +17,7 @@ export function TestimonialsSection({
   return (
     <section
       className={`relative ${
-        compact ? "py-14 md:py-20 bg-creme/40" : "py-24 md:py-32 bg-ivoire"
+        compact ? "studio-canvas py-14 md:py-20" : "py-24 md:py-32 bg-ivoire"
       } overflow-hidden`}
       aria-label="Témoignages clients"
     >
@@ -25,20 +25,20 @@ export function TestimonialsSection({
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 max-w-5xl">
           <div className="max-w-xl">
             <Reveal>
-              <Eyebrow>Ils en parlent</Eyebrow>
+              <Eyebrow tone={compact ? "ivoire" : "default"}>Ils en parlent</Eyebrow>
             </Reveal>
             <Reveal delay={0.05}>
               <h2
                 className={`heading-h2 mt-5 text-balance ${
                   compact
-                    ? "text-[clamp(1.5rem,3vw,2.25rem)]"
+                    ? "text-[clamp(1.5rem,3vw,2.25rem)] text-ivoire"
                     : "text-[clamp(1.75rem,3.5vw,2.5rem)]"
                 }`}
               >
                 {compact ? (
                   <>
                     Ce que nous disent nos{" "}
-                    <em className="not-italic text-miel italic font-serif">
+                    <em className="not-italic text-miel-clair italic font-serif">
                       premiers clients.
                     </em>
                   </>
@@ -49,7 +49,7 @@ export function TestimonialsSection({
             </Reveal>
           </div>
           <Reveal delay={0.1}>
-            <p className="text-[13.5px] text-gris-chaud max-w-md md:text-right">
+            <p className={`text-[13.5px] max-w-md md:text-right ${compact ? "text-ivoire/52" : "text-gris-chaud"}`}>
               Avis recueillis auprès d'entreprises accompagnées par Hi-Ve.
             </p>
           </Reveal>
@@ -61,7 +61,11 @@ export function TestimonialsSection({
           {testimonials.map((t, i) => (
             <figure
               key={t.name + i}
-              className="group bg-white border-[0.5px] border-sable rounded-2xl p-6 md:p-7 max-w-md w-[85vw] md:w-[420px] shrink-0 transition-colors duration-300 hover:border-miel"
+              className={`group border-[0.5px] rounded-lg p-5 md:p-6 max-w-md w-[85vw] md:w-[420px] shrink-0 transition-colors duration-300 hover:border-miel ${
+                compact
+                  ? "bg-studio-canvas border-ivoire/10"
+                  : "bg-white border-sable"
+              }`}
             >
               <div className="flex items-start justify-between mb-4">
                 <Hexagon
@@ -69,16 +73,16 @@ export function TestimonialsSection({
                   filled
                   className="text-miel transition-transform duration-300 group-hover:rotate-30"
                 />
-                <span className="text-[10px] uppercase tracking-label text-gris-clair tabular-nums">
+                <span className={`text-[10px] uppercase tracking-label tabular-nums ${compact ? "text-ivoire/34" : "text-gris-clair"}`}>
                   {String(i + 1).padStart(2, "0")}
                 </span>
               </div>
-              <blockquote className="font-serif text-[18px] md:text-[20px] leading-[1.45] text-encre">
+              <blockquote className={`font-serif text-[18px] md:text-[20px] leading-[1.25] ${compact ? "text-ivoire" : "text-encre"}`}>
                 « {t.quote} »
               </blockquote>
-              <figcaption className="mt-6 pt-4 border-t-[0.5px] border-sable">
-                <p className="font-medium text-[14px] text-encre">{t.name}</p>
-                <p className="text-[12.5px] text-gris-chaud">{t.role}</p>
+              <figcaption className={`mt-6 pt-4 border-t-[0.5px] ${compact ? "border-ivoire/10" : "border-sable"}`}>
+                <p className={`font-medium text-[14px] ${compact ? "text-ivoire" : "text-encre"}`}>{t.name}</p>
+                <p className={`text-[12.5px] ${compact ? "text-ivoire/50" : "text-gris-chaud"}`}>{t.role}</p>
               </figcaption>
             </figure>
           ))}

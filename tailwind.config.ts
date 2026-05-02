@@ -29,6 +29,16 @@ const config: Config = {
         encre: "#1A1814",
         "gris-chaud": "#6B645A",
         "gris-clair": "#9B9389",
+        studio: {
+          zero: "#1A1814",
+          canvas: "#211E19",
+          panel: "#27231D",
+          mist: "#F8F4ED",
+          ash: "#BDB4A7",
+          dust: "#81776A",
+          line: "rgba(248, 244, 237, 0.12)",
+          action: "#D4954A",
+        },
 
         // Atelier Morel palette
         morel: {

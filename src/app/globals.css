@@ -9,6 +9,16 @@
     --color-sable: 226 216 198;
     --color-miel: 184 115 44;
     --color-encre: 26 24 20;
+    --studio-zero: #1a1814;
+    --studio-canvas: #211e19;
+    --studio-panel: #27231d;
+    --studio-mist: #f8f4ed;
+    --studio-ash: #bdb4a7;
+    --studio-line: rgba(248, 244, 237, 0.12);
+    --studio-action: #d4954a;
+    --studio-radius-card: 8px;
+    --studio-radius-button: 100px;
+    --studio-section-gap: 64px;
   }
 
   html {
@@ -55,6 +65,32 @@
 
   .body-large {
     @apply text-lg md:text-xl leading-[1.6] text-gris-chaud;
+  }
+
+  .studio-canvas {
+    background:
+      linear-gradient(rgba(241, 235, 223, 0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(241, 235, 223, 0.035) 1px, transparent 1px),
+      var(--studio-zero);
+    background-size: 64px 64px;
+    color: var(--studio-mist);
+  }
+
+  .studio-panel {
+    background: var(--studio-canvas);
+    border: 0.5px solid var(--studio-line);
+    border-radius: var(--studio-radius-card);
+  }
+
+  .studio-card {
+    background: var(--studio-panel);
+    border: 0.5px solid var(--studio-line);
+    border-radius: var(--studio-radius-card);
+    box-shadow: rgba(0, 0, 0, 0.3) 0 10px 20px 0;
+  }
+
+  .studio-muted {
+    color: var(--studio-ash);
   }
 
   .divider-hex {

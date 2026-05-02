@@ -30,8 +30,9 @@ const slides = [
   },
 ];
 
-export function HeroCarousel() {
+export function HeroCarousel({ tone = "light" }: { tone?: "light" | "dark" }) {
   const [index, setIndex] = useState(0);
+  const dark = tone === "dark";
 
   useEffect(() => {
     const id = setInterval(() => {
@@ -54,7 +55,7 @@ export function HeroCarousel() {
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
           >
             <Link href={slides[index].href} aria-label={`Voir la démo ${slides[index].name}`}>
-              <BrowserFrame url={slides[index].url}>
+              <BrowserFrame url={slides[index].url} tone={tone}>
                 <Active />
               </BrowserFrame>
             </Link>
@@ -62,7 +63,12 @@ export function HeroCarousel() {
         </AnimatePresence>
 
         {/* Floating badge */}
-        <div className="absolute -bottom-4 left-4 md:-left-4 md:-bottom-6 bg-encre text-ivoire rounded-full px-4 py-2 text-[11px] uppercase tracking-label flex items-center gap-2 shadow-[0_15px_30px_-15px_rgba(26,24,20,0.4)]">
+        <div
+          className={cn(
+            "absolute -bottom-4 left-4 md:-left-4 md:-bottom-6 rounded-full px-4 py-2 text-[11px] uppercase tracking-label flex items-center gap-2 shadow-[0_15px_30px_-15px_rgba(26,24,20,0.4)]",
+            dark ? "bg-ivoire text-encre" : "bg-encre text-ivoire",
+          )}
+        >
           <span className="size-1.5 rounded-full bg-miel-clair animate-pulse" />
           Démo {index + 1} sur {slides.length}
         </div>
@@ -80,13 +86,25 @@ export function HeroCarousel() {
               <span
                 className={cn(
                   "h-px w-12 transition-all",
-                  index === i ? "bg-encre w-16" : "bg-sable group-hover:bg-gris-chaud",
+                  index === i
+                    ? dark
+                      ? "bg-miel w-16"
+                      : "bg-encre w-16"
+                    : dark
+                      ? "bg-ivoire/18 group-hover:bg-ivoire/45"
+                      : "bg-sable group-hover:bg-gris-chaud",
                 )}
               />
               <span
                 className={cn(
                   "text-[11px] uppercase tracking-label transition-colors",
-                  index === i ? "text-encre" : "text-gris-chaud group-hover:text-encre",
+                  index === i
+                    ? dark
+                      ? "text-ivoire"
+                      : "text-encre"
+                    : dark
+                      ? "text-ivoire/48 group-hover:text-ivoire/80"
+                      : "text-gris-chaud group-hover:text-encre",
                 )}
               >
                 {s.name}

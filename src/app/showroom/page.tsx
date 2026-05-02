@@ -77,12 +77,6 @@ const showroomEntries = [
   },
 ];
 
-const mockups = {
-  AtelierMockup,
-  LyriaMockup,
-  AvelineMockup,
-};
-
 export default function ShowroomPage() {
   return (
     <>
