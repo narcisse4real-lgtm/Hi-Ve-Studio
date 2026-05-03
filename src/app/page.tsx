@@ -43,8 +43,8 @@ export default function HomePage() {
       <main id="main">
         <Hero />
         <MinimalApproachSection />
-        <BeforeAfterSection />
         <MinimalProofMarquee />
+        <BeforeAfterSection />
         <OffresSection />
         <MinimalAuditCtaSection />
       </main>
