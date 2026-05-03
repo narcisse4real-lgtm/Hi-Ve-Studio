@@ -3,10 +3,11 @@ import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { MobileCTA } from "@/components/layout/mobile-cta";
 import { Hero } from "@/components/sections/hero";
+import { BeforeAfterSection } from "@/components/sections/before-after";
+import { OffresSection } from "@/components/sections/offres";
 import {
   MinimalApproachSection,
   MinimalAuditCtaSection,
-  MinimalMethodPricingSection,
   MinimalProofMarquee,
 } from "@/components/sections/home-minimal";
 import { siteConfig } from "@/content/site";
@@ -42,8 +43,9 @@ export default function HomePage() {
       <main id="main">
         <Hero />
         <MinimalApproachSection />
+        <BeforeAfterSection />
         <MinimalProofMarquee />
-        <MinimalMethodPricingSection />
+        <OffresSection />
         <MinimalAuditCtaSection />
       </main>
       <Footer />

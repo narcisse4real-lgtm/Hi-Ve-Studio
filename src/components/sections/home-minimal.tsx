@@ -22,18 +22,6 @@ const essentials = [
   },
 ];
 
-const steps = [
-  ["01", "Diagnostic", "On comprend votre activité."],
-  ["02", "Création", "On pose la direction, les pages, les contenus."],
-  ["03", "Mise en ligne", "On publie, on forme, vous gardez la main."],
-];
-
-const packs = [
-  ["Essentiel", "1 990 €", "Une présence claire."],
-  ["Vitrine Pro", "2 990 €", "Le bon niveau pour générer des demandes."],
-  ["Signature", "4 500 €", "Une image plus éditoriale, plus premium."],
-];
-
 const proofItems = [
   "Un site qui inspire confiance.",
   "Un message compris en quelques secondes.",
@@ -100,75 +88,6 @@ export function MinimalProofMarquee() {
           </div>
         ))}
       </Marquee>
-    </section>
-  );
-}
-
-export function MinimalMethodPricingSection() {
-  return (
-    <section id="methode" className="bg-ivoire py-20 md:py-28">
-      <div className="container">
-        <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
-          <div className="max-w-xl">
-            <Reveal>
-              <Eyebrow>Méthode & tarifs</Eyebrow>
-            </Reveal>
-            <Reveal delay={0.05}>
-              <h2 className="heading-h2 mt-5 text-[clamp(2rem,4.4vw,4rem)] leading-none tracking-[-0.03em] text-balance">
-                Un cadre simple. Un devis clair.
-              </h2>
-            </Reveal>
-            <Reveal delay={0.1}>
-              <p className="mt-6 text-[17px] leading-[1.65] text-gris-chaud">
-                Vous savez ce qui est prévu, ce que ça coûte, et ce qui se passe
-                après la mise en ligne.
-              </p>
-            </Reveal>
-          </div>
-
-          <div className="space-y-10">
-            <div className="grid gap-4 md:grid-cols-3">
-              {steps.map(([number, title, text]) => (
-                <Reveal key={number} as="article" className="border-t-[0.5px] border-sable pt-5">
-                  <span className="text-[11px] uppercase tracking-[0.18em] text-gris-clair">
-                    {number}
-                  </span>
-                  <h3 className="mt-5 font-serif text-2xl text-encre">{title}</h3>
-                  <p className="mt-2 text-sm leading-[1.6] text-gris-chaud">{text}</p>
-                </Reveal>
-              ))}
-            </div>
-
-            <Reveal>
-              <div className="rounded-[18px] border-[0.5px] border-sable bg-creme p-4 md:p-5">
-                <div className="grid gap-3 md:grid-cols-3">
-                  {packs.map(([name, price, text]) => (
-                    <div key={name} className="rounded-[14px] bg-ivoire p-5">
-                      <p className="text-[11px] uppercase tracking-[0.18em] text-gris-chaud">
-                        {name}
-                      </p>
-                      <p className="mt-4 font-serif text-3xl text-encre">{price}</p>
-                      <p className="mt-2 text-sm leading-[1.55] text-gris-chaud">
-                        {text}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="mt-5 flex flex-col gap-4 border-t-[0.5px] border-sable pt-5 md:flex-row md:items-center md:justify-between">
-                  <p className="max-w-xl text-sm leading-[1.6] text-gris-chaud">
-                    Le référencement local avancé se travaille en accompagnement,
-                    jamais en promesse magique.
-                  </p>
-                  <Button href="/tarifs" variant="secondary" size="sm">
-                    Voir les tarifs
-                  </Button>
-                </div>
-              </div>
-            </Reveal>
-          </div>
-        </div>
-      </div>
     </section>
   );
 }
