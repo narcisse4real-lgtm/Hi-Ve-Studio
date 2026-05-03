@@ -5,12 +5,11 @@ import { useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { Hexagon } from "@/components/ui/hexagon";
+import { ClientMockupMarquee } from "./client-mockup-marquee";
 import { HeroCarousel } from "./hero-carousel";
-import { Marquee } from "@/components/ui/marquee";
 import { Magnetic } from "@/components/ui/magnetic";
 import { FloatingHex } from "@/components/ui/floating-hex";
 import { SplitText } from "@/components/ui/split-text";
-import { clientLogos } from "@/content/site";
 
 export function Hero() {
   const ref = useRef<HTMLElement>(null);
@@ -145,7 +144,7 @@ export function Hero() {
         </div>
       </motion.div>
 
-      {/* Logos marquee */}
+      {/* Client mockups marquee */}
       <div className="mt-20 md:mt-28">
         <div className="container mb-8">
           <motion.div
@@ -162,23 +161,7 @@ export function Hero() {
             <span className="h-px w-8 bg-ivoire/14" />
           </motion.div>
         </div>
-        <Marquee speed="normal">
-          {clientLogos.map((name) => (
-            <div
-              key={name}
-              className="flex items-center gap-3 whitespace-nowrap group"
-            >
-              <Hexagon
-                size={11}
-                filled
-                className="text-miel/70 transition-colors group-hover:text-miel-clair"
-              />
-              <span className="font-serif text-xl md:text-[26px] text-ivoire/32 transition-colors group-hover:text-ivoire">
-                {name}
-              </span>
-            </div>
-          ))}
-        </Marquee>
+        <ClientMockupMarquee />
       </div>
     </section>
   );
