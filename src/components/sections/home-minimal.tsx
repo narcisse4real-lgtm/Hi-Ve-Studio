@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { Marquee } from "@/components/ui/marquee";
 import { Reveal } from "@/components/ui/reveal";
+import { testimonials } from "@/content/home";
 
 const essentials = [
   {
@@ -20,14 +21,6 @@ const essentials = [
     text: "Appel, devis ou rendez-vous visibles au bon moment.",
     icon: MessageCircle,
   },
-];
-
-const proofItems = [
-  "Un site qui inspire confiance.",
-  "Un message compris en quelques secondes.",
-  "Un contact évident sur mobile.",
-  "Une image locale plus forte.",
-  "Une vitrine qui travaille vraiment.",
 ];
 
 export function MinimalApproachSection() {
@@ -77,15 +70,43 @@ export function MinimalApproachSection() {
 
 export function MinimalProofMarquee() {
   return (
-    <section className="overflow-hidden border-y-[0.5px] border-sable bg-creme py-6">
-      <Marquee speed="normal" pauseOnHover={false} fade={false}>
-        {proofItems.map((item) => (
-          <div key={item} className="flex items-center gap-5 whitespace-nowrap">
-            <span className="size-2 rounded-full bg-miel" aria-hidden="true" />
-            <span className="font-serif text-[clamp(1.8rem,4vw,4rem)] leading-none text-encre/75">
-              {item}
-            </span>
-          </div>
+    <section className="overflow-hidden border-y-[0.5px] border-sable bg-creme py-12 md:py-16">
+      <div className="container mb-8 flex items-end justify-between gap-6">
+        <Reveal>
+          <Eyebrow>Avis clients</Eyebrow>
+        </Reveal>
+        <Reveal delay={0.05}>
+          <p className="hidden max-w-sm text-right text-sm leading-[1.55] text-gris-chaud md:block">
+            Des retours concrets, parce qu'une belle vitrine doit aussi créer
+            de la confiance.
+          </p>
+        </Reveal>
+      </div>
+
+      <Marquee speed="slow" pauseOnHover>
+        {testimonials.map((testimonial, index) => (
+          <figure
+            key={`${testimonial.name}-${index}`}
+            className="w-[84vw] max-w-[430px] shrink-0 rounded-[18px] border-[0.5px] border-sable bg-[#fffaf2] p-6 shadow-[0_24px_60px_-48px_rgba(26,24,20,0.45)] md:w-[430px]"
+          >
+            <div className="mb-5 flex items-center justify-between">
+              <span className="text-[11px] uppercase tracking-[0.18em] text-gris-chaud">
+                Avis client
+              </span>
+              <span className="tabular-nums text-[11px] text-gris-clair">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+            </div>
+            <blockquote className="font-serif text-[21px] leading-[1.24] text-encre md:text-[23px]">
+              “{testimonial.quote}”
+            </blockquote>
+            <figcaption className="mt-6 border-t-[0.5px] border-sable pt-4">
+              <p className="text-sm font-medium text-encre">{testimonial.name}</p>
+              <p className="mt-1 text-[13px] text-gris-chaud">
+                {testimonial.role}
+              </p>
+            </figcaption>
+          </figure>
         ))}
       </Marquee>
     </section>
