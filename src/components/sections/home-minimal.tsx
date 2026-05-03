@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, Check, Compass, MessageCircle, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -31,7 +32,10 @@ const essentials = [
 
 export function MinimalApproachSection() {
   return (
-    <section id="approche" className="relative overflow-hidden bg-ivoire py-20 md:py-32">
+    <section
+      id="approche"
+      className="relative overflow-hidden bg-ivoire py-20 md:py-32"
+    >
       <motion.div
         className="pointer-events-none absolute left-[-12%] top-24 hidden h-64 w-64 rounded-full border-[0.5px] border-sable/80 lg:block"
         animate={{ rotate: 360 }}
@@ -65,62 +69,70 @@ export function MinimalApproachSection() {
         </div>
 
         <div className="mt-14 grid gap-7 lg:grid-cols-[0.92fr_1.08fr] lg:items-stretch">
-          <Reveal className="min-h-[440px]">
-            <div className="relative h-full overflow-hidden rounded-[26px] border-[0.5px] border-sable bg-[#fffaf2] p-5 md:p-7">
+          <Reveal className="min-h-[440px] md:min-h-[500px]">
+            <div className="relative h-full min-h-[440px] overflow-hidden rounded-[26px] border-[0.5px] border-sable bg-[#fffaf2] p-5 md:min-h-[500px] md:p-7">
               <div className="absolute inset-0 bg-[linear-gradient(rgba(226,216,198,0.45)_1px,transparent_1px),linear-gradient(90deg,rgba(226,216,198,0.45)_1px,transparent_1px)] bg-[size:42px_42px]" />
+
               <motion.div
-                className="absolute left-8 top-8 w-[58%] rounded-[20px] border-[0.5px] border-sable bg-creme p-4 shadow-[0_24px_60px_-48px_rgba(26,24,20,0.7)]"
+                className="absolute left-4 top-7 w-[70%] overflow-hidden rounded-[20px] border-[0.5px] border-sable bg-creme shadow-[0_24px_60px_-48px_rgba(26,24,20,0.7)] md:left-8 md:top-8 md:w-[61%]"
                 initial={{ opacity: 0, y: 24, rotate: -2 }}
                 whileInView={{ opacity: 1, y: 0, rotate: -2 }}
                 viewport={{ once: true, amount: 0.35 }}
                 transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
               >
-                <div className="mb-5 flex items-center justify-between">
-                  <span className="text-[10px] uppercase tracking-[0.18em] text-gris-clair">
-                    Avant
-                  </span>
-                  <span className="h-2 w-10 rounded-full bg-sable" />
+                <div className="absolute left-3 top-3 z-10 rounded-full border-[0.5px] border-sable bg-ivoire/90 px-3 py-1 text-[10px] uppercase tracking-[0.18em] text-gris-chaud backdrop-blur-sm">
+                  Avant
                 </div>
-                <div className="space-y-2">
-                  <span className="block h-5 w-3/4 rounded-full bg-sable" />
-                  <span className="block h-3 w-full rounded-full bg-sable/80" />
-                  <span className="block h-3 w-2/3 rounded-full bg-sable/70" />
-                </div>
-                <div className="mt-6 grid grid-cols-3 gap-2">
-                  <span className="h-16 rounded-xl bg-sable/70" />
-                  <span className="h-16 rounded-xl bg-sable/60" />
-                  <span className="h-16 rounded-xl bg-sable/50" />
+                <Image
+                  src="/mockups/approach-before-homepage.png"
+                  alt="Ancien site vitrine daté avant refonte"
+                  width={1536}
+                  height={960}
+                  sizes="(max-width: 768px) 70vw, 360px"
+                  className="aspect-[16/10] w-full object-cover opacity-80 saturate-[0.72]"
+                />
+                <div className="absolute inset-x-0 bottom-0 flex items-center justify-between bg-creme/88 px-4 py-2 text-[10px] uppercase tracking-[0.18em] text-gris-chaud backdrop-blur-sm">
+                  <span>peu lisible</span>
+                  <span className="h-1.5 w-10 rounded-full bg-sable" />
                 </div>
               </motion.div>
 
               <motion.div
-                className="absolute bottom-7 right-6 w-[68%] rounded-[24px] border-[0.5px] border-encre/10 bg-encre p-4 text-ivoire shadow-[0_32px_80px_-48px_rgba(26,24,20,0.9)] md:right-8"
+                className="absolute bottom-7 right-4 w-[82%] overflow-hidden rounded-[24px] border-[0.5px] border-encre/10 bg-encre text-ivoire shadow-[0_34px_88px_-46px_rgba(26,24,20,0.95)] md:right-8 md:w-[74%]"
                 initial={{ opacity: 0, y: 30, rotate: 2 }}
                 whileInView={{ opacity: 1, y: 0, rotate: 2 }}
                 viewport={{ once: true, amount: 0.35 }}
-                transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+                transition={{
+                  duration: 0.8,
+                  delay: 0.15,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
               >
-                <div className="mb-5 flex items-center justify-between">
-                  <span className="text-[10px] uppercase tracking-[0.18em] text-ivoire/52">
-                    Après
-                  </span>
-                  <motion.span
-                    className="h-2 w-2 rounded-full bg-miel"
-                    animate={{ scale: [1, 1.8, 1], opacity: [0.7, 1, 0.7] }}
-                    transition={{ repeat: Infinity, duration: 2.4, ease: "easeInOut" }}
-                  />
+                <div className="absolute left-3 top-3 z-10 rounded-full border-[0.5px] border-ivoire/16 bg-encre/78 px-3 py-1 text-[10px] uppercase tracking-[0.18em] text-ivoire/72 backdrop-blur-sm">
+                  Après
                 </div>
-                <p className="font-serif text-[32px] leading-[0.95] md:text-[42px]">
-                  clair.
-                  <br />
-                  crédible.
-                  <br />
-                  contactable.
-                </p>
-                <div className="mt-7 flex items-center justify-between rounded-full border-[0.5px] border-ivoire/14 bg-ivoire/[0.06] px-4 py-3 text-sm">
+                <Image
+                  src="/mockups/approach-after-homepage.png"
+                  alt="Site vitrine premium après refonte"
+                  width={1536}
+                  height={960}
+                  sizes="(max-width: 768px) 82vw, 440px"
+                  className="aspect-[16/10] w-full object-cover"
+                  priority={false}
+                />
+                <div className="absolute inset-x-3 bottom-3 flex items-center justify-between rounded-full border-[0.5px] border-ivoire/14 bg-encre/74 px-4 py-3 text-sm backdrop-blur-md">
                   <span>Demande qualifiée</span>
                   <ArrowRight className="size-4 text-miel" />
                 </div>
+                <motion.span
+                  className="absolute right-4 top-4 h-2 w-2 rounded-full bg-miel"
+                  animate={{ scale: [1, 1.8, 1], opacity: [0.7, 1, 0.7] }}
+                  transition={{
+                    repeat: Infinity,
+                    duration: 2.4,
+                    ease: "easeInOut",
+                  }}
+                />
               </motion.div>
 
               <motion.div
@@ -146,14 +158,20 @@ export function MinimalApproachSection() {
                     <motion.div
                       className="absolute right-[-32px] top-[-32px] size-28 rounded-full border-[0.5px] border-sable"
                       animate={{ rotate: 360 }}
-                      transition={{ repeat: Infinity, duration: 28 + index * 8, ease: "linear" }}
+                      transition={{
+                        repeat: Infinity,
+                        duration: 28 + index * 8,
+                        ease: "linear",
+                      }}
                     />
                     <div className="relative flex items-start gap-5">
                       <div className="flex size-12 shrink-0 items-center justify-center rounded-full border-[0.5px] border-sable bg-ivoire text-miel transition-colors duration-300 group-hover:border-miel">
                         <Icon className="size-4" />
                       </div>
                       <div>
-                        <h3 className="font-serif text-3xl text-encre">{item.title}</h3>
+                        <h3 className="font-serif text-3xl text-encre">
+                          {item.title}
+                        </h3>
                         <p className="mt-2 text-[15px] leading-[1.6] text-gris-chaud">
                           {item.text}
                         </p>
@@ -206,7 +224,9 @@ export function MinimalProofMarquee() {
               “{testimonial.quote}”
             </blockquote>
             <figcaption className="mt-6 border-t-[0.5px] border-sable pt-4">
-              <p className="text-sm font-medium text-encre">{testimonial.name}</p>
+              <p className="text-sm font-medium text-encre">
+                {testimonial.name}
+              </p>
               <p className="mt-1 text-[13px] text-gris-chaud">
                 {testimonial.role}
               </p>
