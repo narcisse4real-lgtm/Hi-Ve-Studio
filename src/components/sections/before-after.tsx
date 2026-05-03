@@ -11,11 +11,11 @@ function BeforeMockup() {
     <div className="relative aspect-[16/10] bg-[#e8e2d7]">
       <Image
         src="/mockups/transformation-before-homepage.png"
-        alt="Ancienne homepage Menuiserie Durand avant refonte"
+        alt="Ancienne homepage Maison Aveline avant refonte"
         width={1536}
         height={960}
-        sizes="(max-width: 768px) 100vw, 1120px"
-        className="h-full w-full object-cover opacity-85 saturate-[0.72]"
+        sizes="(max-width: 768px) 100vw, (max-width: 1280px) 96vw, 1320px"
+        className="h-full w-full object-contain opacity-90 saturate-[0.78]"
       />
     </div>
   );
@@ -26,11 +26,11 @@ function AfterMockup() {
     <div className="relative aspect-[16/10] bg-[#f5f0e8]">
       <Image
         src="/mockups/transformation-after-homepage.png"
-        alt="Homepage Menuiserie Durand premium après refonte Hi-Ve"
+        alt="Homepage Maison Aveline premium après refonte Hi-Ve"
         width={1536}
         height={960}
-        sizes="(max-width: 768px) 100vw, 1120px"
-        className="h-full w-full object-cover"
+        sizes="(max-width: 768px) 100vw, (max-width: 1280px) 96vw, 1320px"
+        className="h-full w-full object-contain"
       />
     </div>
   );
@@ -95,10 +95,10 @@ export function BeforeAfterSection() {
         </div>
 
         <Reveal delay={0.15}>
-          <div className="mt-14 select-none">
+          <div className="mt-14 select-none md:-mx-6 lg:-mx-12 xl:-mx-20 2xl:-mx-28">
             <div
               ref={containerRef}
-              className="relative touch-none cursor-ew-resize overflow-hidden rounded-2xl border-[0.5px] border-sable"
+              className="relative touch-none cursor-ew-resize overflow-hidden rounded-2xl border-[0.5px] border-sable shadow-[0_34px_90px_-62px_rgba(26,24,20,0.55)]"
               onMouseDown={(event) => {
                 setDragging(true);
                 updateFromClientX(event.clientX);
@@ -123,7 +123,7 @@ export function BeforeAfterSection() {
               }}
             >
               <BrowserFrame
-                url="menuiserie-durand.fr"
+                url="maison-aveline.fr"
                 className="rounded-none border-none shadow-none"
               >
                 <AfterMockup />
@@ -136,7 +136,7 @@ export function BeforeAfterSection() {
                 }}
               >
                 <BrowserFrame
-                  url="menuiserie-durand-2008.fr"
+                  url="maison-aveline-2010.fr"
                   className="h-full rounded-none border-none shadow-none"
                 >
                   <BeforeMockup />
@@ -177,7 +177,7 @@ export function BeforeAfterSection() {
                   Avant
                 </p>
                 <p className="mt-2 text-[15px] leading-[1.6] text-gris-chaud">
-                  Site daté, peu lisible sur mobile, contact perdu en bas de page.
+                  Site daté, univers peu désirable, réservation perdue en bas de page.
                 </p>
               </div>
               <div className="border-l-2 border-miel pl-5">
@@ -185,8 +185,8 @@ export function BeforeAfterSection() {
                   Après
                 </p>
                 <p className="mt-2 text-[15px] leading-[1.6] text-encre">
-                  Design clair, mobile-first, contact accessible en un clic,
-                  image alignée avec votre niveau réel.
+                  Image premium, prestations lisibles, réservation visible et
+                  perception alignée avec un institut haut de gamme.
                 </p>
               </div>
             </div>
