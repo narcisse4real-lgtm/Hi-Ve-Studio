@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { Hexagon } from "@/components/ui/hexagon";
 import { ClientMockupMarquee } from "./client-mockup-marquee";
-import { HeroCarousel } from "./hero-carousel";
 import { Magnetic } from "@/components/ui/magnetic";
 import { FloatingHex } from "@/components/ui/floating-hex";
 import { SplitText } from "@/components/ui/split-text";
@@ -17,47 +16,31 @@ export function Hero() {
     target: ref,
     offset: ["start start", "end start"],
   });
-  const visualY = useTransform(scrollYProgress, [0, 1], [0, -80]);
-  const textY = useTransform(scrollYProgress, [0, 1], [0, 50]);
+  const textY = useTransform(scrollYProgress, [0, 1], [0, 38]);
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0.4]);
 
   return (
     <section
       ref={ref}
-      className="studio-canvas relative pt-28 md:pt-36 pb-16 md:pb-24 overflow-hidden"
+      className="studio-canvas relative overflow-hidden pb-14 pt-28 md:pb-20 md:pt-36"
     >
-      {/* Decorative floating hexes */}
       <FloatingHex
-        className="absolute -top-24 -right-32 text-ivoire/[0.035]"
-        size={460}
+        className="absolute -right-36 -top-28 text-ivoire/[0.035]"
+        size={420}
         rotateDuration={120}
-        intensity={0.025}
-      />
-      <FloatingHex
-        className="hidden lg:block absolute top-[55%] left-[-60px] text-miel/30"
-        size={120}
-        rotateDuration={45}
-        intensity={0.06}
-        filled
-      />
-      <FloatingHex
-        className="hidden lg:block absolute top-[20%] right-[18%] text-sauge/30"
-        size={32}
-        rotateDuration={30}
-        intensity={0.1}
-        filled
+        intensity={0.02}
       />
 
       <motion.div style={{ opacity }} className="container relative">
         <div className="mx-auto max-w-6xl">
-          <motion.div style={{ y: textY }} className="mx-auto max-w-5xl text-center">
+          <motion.div style={{ y: textY }} className="mx-auto max-w-4xl text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             >
               <Eyebrow tone="ivoire" className="justify-center">
-                Sites vitrines pour artisans, PME et professions libérales
+                Sites vitrines pour entreprises locales
               </Eyebrow>
             </motion.div>
 
@@ -81,12 +64,10 @@ export function Hero() {
                 delay: 0.55,
                 ease: [0.22, 1, 0.36, 1],
               }}
-              className="mx-auto mt-7 max-w-2xl text-lg md:text-[19px] leading-[1.55] text-ivoire/68 text-pretty"
+              className="mx-auto mt-7 max-w-xl text-lg md:text-[19px] leading-[1.55] text-ivoire/66 text-pretty"
             >
-              Hi-Ve crée des sites vitrines modernes pour les entreprises
-              locales qui veulent être visibles, crédibles et contactées. Pas
-              un site qui existe.{" "}
-              <span className="text-ivoire">Un site qui travaille pour vous.</span>
+              Une présence claire, rapide, crédible. Pour être vu, compris et
+              contacté.
             </motion.p>
 
             <motion.div
@@ -97,16 +78,16 @@ export function Hero() {
                 delay: 0.7,
                 ease: [0.22, 1, 0.36, 1],
               }}
-              className="mt-10 flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-center"
+              className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-center"
             >
               <Magnetic strength={0.25}>
                 <Button href="/audit-gratuit" variant="studioSolid">
-                  Recevoir mon audit gratuit
+                  Recevoir mon audit
                 </Button>
               </Magnetic>
               <Magnetic strength={0.18}>
                 <Button href="/showroom" variant="studio">
-                  Explorer le Showroom
+                  Voir les vitrines
                 </Button>
               </Magnetic>
             </motion.div>
@@ -115,7 +96,7 @@ export function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.7, delay: 0.85 }}
-              className="mt-5 text-[13px] text-ivoire/58 flex items-center justify-center gap-2"
+              className="mt-5 flex items-center justify-center gap-2 text-[13px] text-ivoire/58"
             >
               <motion.span
                 animate={{ rotate: 360 }}
@@ -128,24 +109,13 @@ export function Hero() {
               >
                 <Hexagon size={9} filled className="text-sauge" />
               </motion.span>
-              Diagnostic gratuit, sans engagement, réponse sous 48h.
+              Gratuit. Sans engagement. Réponse sous 48h.
             </motion.p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 40, scale: 0.96 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.9, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            style={{ y: visualY }}
-            className="mx-auto mt-14 w-full max-w-5xl rounded-lg border-[0.5px] border-ivoire/10 bg-ivoire/[0.035] p-3 md:p-5"
-          >
-            <HeroCarousel tone="dark" />
           </motion.div>
         </div>
       </motion.div>
 
-      {/* Client mockups marquee */}
-      <div className="mt-20 md:mt-28">
+      <div className="mt-14 md:mt-20">
         <div className="container mb-8">
           <motion.div
             initial={{ opacity: 0 }}
@@ -156,7 +126,7 @@ export function Hero() {
           >
             <span className="h-px w-8 bg-ivoire/14" />
             <span className="text-[11px] uppercase tracking-label text-ivoire/48">
-              Pensé pour les entreprises locales qui se développent
+              Quelques vitrines possibles
             </span>
             <span className="h-px w-8 bg-ivoire/14" />
           </motion.div>
