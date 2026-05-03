@@ -19,7 +19,7 @@ export function ConstatSection() {
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-5">
             <Reveal>
-              <Eyebrow number="01">Le constat</Eyebrow>
+            <Eyebrow>Le constat</Eyebrow>
             </Reveal>
             <Reveal delay={0.05}>
               <h2 className="heading-h2 mt-6 text-[clamp(2rem,4.5vw,3rem)] text-balance">

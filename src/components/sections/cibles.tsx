@@ -8,7 +8,7 @@ export function CiblesSection() {
       <div className="container">
         <div className="max-w-3xl">
           <Reveal>
-            <Eyebrow number="05">Notre cible</Eyebrow>
+            <Eyebrow>Notre cible</Eyebrow>
           </Reveal>
           <Reveal delay={0.05}>
             <h2 className="heading-h2 mt-6 text-[clamp(2rem,4.5vw,3rem)] text-balance">

@@ -10,7 +10,7 @@ export function SolutionSection() {
       <div className="container">
         <div className="max-w-3xl">
           <Reveal>
-            <Eyebrow number="02" tone="ivoire">
+            <Eyebrow tone="ivoire">
               Notre approche
             </Eyebrow>
           </Reveal>

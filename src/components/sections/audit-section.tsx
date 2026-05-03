@@ -12,7 +12,7 @@ export function AuditSection() {
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-5 lg:sticky lg:top-28 lg:self-start">
             <Reveal>
-              <Eyebrow number="10">Audit gratuit</Eyebrow>
+              <Eyebrow>Audit gratuit</Eyebrow>
             </Reveal>
             <Reveal delay={0.05}>
               <h2 className="heading-h2 mt-6 text-[clamp(2rem,4.5vw,3rem)] text-balance">

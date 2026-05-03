@@ -17,7 +17,7 @@ export function FaqSection() {
         <div className="grid gap-14 lg:grid-cols-12">
           <div className="lg:col-span-4">
             <Reveal>
-              <Eyebrow number="09">Questions fréquentes</Eyebrow>
+            <Eyebrow>Questions fréquentes</Eyebrow>
             </Reveal>
             <Reveal delay={0.05}>
               <h2 className="heading-h2 mt-6 text-[clamp(2rem,4vw,2.5rem)] text-balance sticky top-28">

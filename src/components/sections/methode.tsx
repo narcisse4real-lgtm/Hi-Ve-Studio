@@ -9,7 +9,7 @@ export function MethodeSection() {
       <div className="container">
         <div className="max-w-3xl">
           <Reveal>
-            <Eyebrow number="06">Notre méthode</Eyebrow>
+            <Eyebrow>Notre méthode</Eyebrow>
           </Reveal>
           <Reveal delay={0.05}>
             <h2 className="heading-h2 mt-6 text-[clamp(2rem,4.5vw,3rem)] text-balance">

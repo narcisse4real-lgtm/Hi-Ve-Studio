@@ -20,7 +20,7 @@ export function PourquoiSection() {
         <div className="grid gap-12 lg:grid-cols-12 mb-16 md:mb-20">
           <div className="lg:col-span-5">
             <Reveal>
-              <Eyebrow number="08">Pourquoi nous</Eyebrow>
+            <Eyebrow>Pourquoi nous</Eyebrow>
             </Reveal>
             <SplitText
               as="h2"

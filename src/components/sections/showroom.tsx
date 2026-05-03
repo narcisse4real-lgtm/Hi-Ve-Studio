@@ -24,7 +24,7 @@ export function ShowroomSection() {
       <div className="container">
         <div className="max-w-3xl">
           <Reveal>
-            <Eyebrow number="03" tone="ivoire">
+            <Eyebrow tone="ivoire">
               Showroom Hi-Ve
             </Eyebrow>
           </Reveal>
