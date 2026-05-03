@@ -1,93 +1,37 @@
 "use client";
 
-import { useRef, useState, useCallback, useEffect } from "react";
+import Image from "next/image";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { Reveal } from "@/components/ui/reveal";
 import { BrowserFrame } from "@/components/ui/browser-frame";
 
 function BeforeMockup() {
   return (
-    <div className="aspect-[16/10] bg-[#E8E2D7] relative">
-      <div className="absolute inset-0 p-6 flex flex-col">
-        <div className="flex items-center justify-between border-b border-[#888] pb-2">
-          <span
-            className="text-xl text-[#444]"
-            style={{ fontFamily: "Times New Roman, serif" }}
-          >
-            MENUISERIE DURAND
-          </span>
-          <span className="text-[10px] text-[#888]">Tel : 06.XX.XX.XX.XX</span>
-        </div>
-        <div className="mt-3 flex gap-2 text-[10px] text-[#0033cc] underline">
-          <span>Accueil</span>
-          <span>Nos services</span>
-          <span>Galerie</span>
-          <span>Contact</span>
-        </div>
-        <div
-          className="mt-4 flex-1 grid grid-cols-3 gap-2"
-          style={{ fontFamily: "Arial, sans-serif" }}
-        >
-          <div className="col-span-2 bg-[#D4C9B5] flex items-center justify-center text-[10px] text-[#666]">
-            [Bannière JPG 800x300]
-          </div>
-          <div className="bg-white p-2 text-[8px] text-[#444] leading-[1.3]">
-            <strong>Bienvenue !</strong>
-            <br />
-            Notre entreprise familiale réalise tous vos travaux de menuiserie
-            depuis plus de 20 ans...
-          </div>
-        </div>
-        <div className="mt-2 text-[8px] text-[#888] text-center">
-          © 2008 — Site réalisé par WebMaster Local
-        </div>
-      </div>
+    <div className="relative aspect-[16/10] bg-[#e8e2d7]">
+      <Image
+        src="/mockups/transformation-before-homepage.png"
+        alt="Ancienne homepage Menuiserie Durand avant refonte"
+        width={1536}
+        height={960}
+        sizes="(max-width: 768px) 100vw, 1120px"
+        className="h-full w-full object-cover opacity-85 saturate-[0.72]"
+      />
     </div>
   );
 }
 
 function AfterMockup() {
   return (
-    <div className="aspect-[16/10] bg-[#F5F0E8] relative">
-      <div className="absolute inset-0 p-6 flex flex-col">
-        <div className="flex items-center justify-between">
-          <span className="font-serif italic text-[18px] text-[#2B1F14]">
-            Atelier Morel
-          </span>
-          <div className="flex gap-3 text-[9px] uppercase tracking-[0.2em] text-[#2B1F14]/80">
-            <span>Réalisations</span>
-            <span>Devis</span>
-            <span>Contact</span>
-          </div>
-        </div>
-        <div className="mt-6 flex-1 grid grid-cols-12 gap-3">
-          <div className="col-span-7 flex flex-col justify-end">
-            <span className="text-[9px] uppercase tracking-[0.22em] text-[#A8482C]">
-              Menuiserie sur-mesure · Bourgogne
-            </span>
-            <div className="mt-2 font-serif text-[#2B1F14] text-[clamp(14px,3vw,28px)] leading-[1.05]">
-              L'art du sur-mesure,
-              <br />
-              transmis depuis 1962.
-            </div>
-            <div className="mt-3 flex gap-2">
-              <span className="bg-[#A8482C] text-white text-[9px] uppercase tracking-[0.18em] px-3 py-1.5 rounded-full">
-                Demander un devis
-              </span>
-              <span className="border border-[#2B1F14] text-[#2B1F14] text-[9px] uppercase tracking-[0.18em] px-3 py-1.5 rounded-full">
-                Voir l'atelier
-              </span>
-            </div>
-          </div>
-          <div
-            className="col-span-5 rounded-md bg-cover bg-center"
-            style={{
-              backgroundImage:
-                "url(https://images.unsplash.com/photo-1565538810643-b5bdb714032a?auto=format&fit=crop&w=400&q=70)",
-            }}
-          />
-        </div>
-      </div>
+    <div className="relative aspect-[16/10] bg-[#f5f0e8]">
+      <Image
+        src="/mockups/transformation-after-homepage.png"
+        alt="Homepage Menuiserie Durand premium après refonte Hi-Ve"
+        width={1536}
+        height={960}
+        sizes="(max-width: 768px) 100vw, 1120px"
+        className="h-full w-full object-cover"
+      />
     </div>
   );
 }
@@ -106,15 +50,22 @@ export function BeforeAfterSection() {
 
   useEffect(() => {
     if (!dragging) return;
-    const onMove = (e: MouseEvent | TouchEvent) => {
-      const x = "touches" in e ? e.touches[0].clientX : (e as MouseEvent).clientX;
-      updateFromClientX(x);
+
+    const onMove = (event: MouseEvent | TouchEvent) => {
+      const x =
+        "touches" in event
+          ? event.touches[0]?.clientX
+          : (event as MouseEvent).clientX;
+      if (typeof x === "number") updateFromClientX(x);
     };
+
     const onUp = () => setDragging(false);
+
     window.addEventListener("mousemove", onMove);
     window.addEventListener("touchmove", onMove);
     window.addEventListener("mouseup", onUp);
     window.addEventListener("touchend", onUp);
+
     return () => {
       window.removeEventListener("mousemove", onMove);
       window.removeEventListener("touchmove", onMove);
@@ -124,7 +75,7 @@ export function BeforeAfterSection() {
   }, [dragging, updateFromClientX]);
 
   return (
-    <section id="transformation" className="relative py-24 md:py-36 bg-ivoire">
+    <section id="transformation" className="relative bg-ivoire py-24 md:py-36">
       <div className="container">
         <div className="max-w-3xl">
           <Reveal>
@@ -136,7 +87,7 @@ export function BeforeAfterSection() {
             </h2>
           </Reveal>
           <Reveal delay={0.1}>
-            <p className="mt-6 text-lg leading-[1.65] text-gris-chaud max-w-2xl">
+            <p className="mt-6 max-w-2xl text-lg leading-[1.65] text-gris-chaud">
               Voyez ce que change un site Hi-Ve : même métier, même qualité, mais
               une perception complètement différente.
             </p>
@@ -147,14 +98,14 @@ export function BeforeAfterSection() {
           <div className="mt-14 select-none">
             <div
               ref={containerRef}
-              className="relative overflow-hidden rounded-2xl border-[0.5px] border-sable cursor-ew-resize touch-none"
-              onMouseDown={(e) => {
+              className="relative touch-none cursor-ew-resize overflow-hidden rounded-2xl border-[0.5px] border-sable"
+              onMouseDown={(event) => {
                 setDragging(true);
-                updateFromClientX(e.clientX);
+                updateFromClientX(event.clientX);
               }}
-              onTouchStart={(e) => {
+              onTouchStart={(event) => {
                 setDragging(true);
-                updateFromClientX(e.touches[0].clientX);
+                updateFromClientX(event.touches[0].clientX);
               }}
               role="slider"
               aria-label="Comparer avant et après"
@@ -162,19 +113,22 @@ export function BeforeAfterSection() {
               aria-valuemax={100}
               aria-valuenow={Math.round(position)}
               tabIndex={0}
-              onKeyDown={(e) => {
-                if (e.key === "ArrowLeft")
+              onKeyDown={(event) => {
+                if (event.key === "ArrowLeft") {
                   setPosition((p) => Math.max(0, p - 5));
-                if (e.key === "ArrowRight")
+                }
+                if (event.key === "ArrowRight") {
                   setPosition((p) => Math.min(100, p + 5));
+                }
               }}
             >
-              {/* After (bottom layer) */}
-              <BrowserFrame url="atelier-morel.fr" className="rounded-none border-none shadow-none">
+              <BrowserFrame
+                url="menuiserie-durand.fr"
+                className="rounded-none border-none shadow-none"
+              >
                 <AfterMockup />
               </BrowserFrame>
 
-              {/* Before (top layer with clip) */}
               <div
                 className="absolute inset-0 overflow-hidden"
                 style={{
@@ -183,30 +137,36 @@ export function BeforeAfterSection() {
               >
                 <BrowserFrame
                   url="menuiserie-durand-2008.fr"
-                  className="rounded-none border-none shadow-none h-full"
+                  className="h-full rounded-none border-none shadow-none"
                 >
                   <BeforeMockup />
                 </BrowserFrame>
               </div>
 
-              {/* Handle */}
               <div
-                className="absolute inset-y-0 w-px bg-ivoire pointer-events-none"
+                className="pointer-events-none absolute inset-y-0 w-px bg-ivoire"
                 style={{ left: `${position}%` }}
               >
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-12 rounded-full bg-encre text-ivoire flex items-center justify-center shadow-[0_15px_30px_-10px_rgba(26,24,20,0.5)]">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <div className="absolute left-1/2 top-1/2 flex size-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-encre text-ivoire shadow-[0_15px_30px_-10px_rgba(26,24,20,0.5)]">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    aria-hidden="true"
+                  >
                     <path d="m9 6-6 6 6 6" />
                     <path d="m15 6 6 6-6 6" />
                   </svg>
                 </div>
               </div>
 
-              {/* Labels */}
-              <div className="absolute top-4 left-4 text-[10px] uppercase tracking-label bg-encre/85 text-ivoire px-2.5 py-1 rounded-full backdrop-blur">
+              <div className="absolute left-4 top-4 rounded-full bg-encre/85 px-2.5 py-1 text-[10px] uppercase tracking-label text-ivoire backdrop-blur">
                 Avant
               </div>
-              <div className="absolute top-4 right-4 text-[10px] uppercase tracking-label bg-miel text-ivoire px-2.5 py-1 rounded-full">
+              <div className="absolute right-4 top-4 rounded-full bg-miel px-2.5 py-1 text-[10px] uppercase tracking-label text-ivoire">
                 Après Hi-Ve
               </div>
             </div>
@@ -225,7 +185,8 @@ export function BeforeAfterSection() {
                   Après
                 </p>
                 <p className="mt-2 text-[15px] leading-[1.6] text-encre">
-                  Design clair, mobile-first, contact accessible en un clic, image alignée avec votre niveau réel.
+                  Design clair, mobile-first, contact accessible en un clic,
+                  image alignée avec votre niveau réel.
                 </p>
               </div>
             </div>
