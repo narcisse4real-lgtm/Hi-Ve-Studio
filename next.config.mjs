@@ -8,6 +8,14 @@ const nextConfig = {
       { protocol: "https", hostname: "images.pexels.com" },
     ],
   },
+  async rewrites() {
+    return [
+      {
+        source: "/runway",
+        destination: "/runway/index.html",
+      },
+    ];
+  },
 };
 
 export default nextConfig;
