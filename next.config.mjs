@@ -9,12 +9,14 @@ const nextConfig = {
     ],
   },
   async rewrites() {
-    return [
-      {
-        source: "/runway",
-        destination: "/runway/v3.html",
-      },
-    ];
+    return {
+      beforeFiles: [
+        {
+          source: "/runway",
+          destination: "/runway/v3.html",
+        },
+      ],
+    };
   },
 };
 
