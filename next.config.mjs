@@ -13,7 +13,7 @@ const nextConfig = {
       beforeFiles: [
         {
           source: "/runway",
-          destination: "/runway/v3.html",
+          destination: "/runway/v4.html",
         },
       ],
     };
