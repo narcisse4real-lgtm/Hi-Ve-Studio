@@ -12,7 +12,7 @@ const nextConfig = {
     return [
       {
         source: "/runway",
-        destination: "/runway/index.html",
+        destination: "/runway/v3.html",
       },
     ];
   },
