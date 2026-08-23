@@ -8,6 +8,15 @@
 <meta name="description" content="Interactive horizontal portfolio deck by Malik Mansouri — influencer marketing and creator partnerships, built for Runway." />
 <link rel="stylesheet" href="/runway/editorial_v4.css" />
 <link rel="stylesheet" href="/runway/mobile_v5.css" />
+
+<style>
+.kcc-phone{position:relative;background:#111;overflow:hidden}
+.kcc-phone #kccVideo{position:absolute;inset:3px;width:calc(100% - 6px);height:calc(100% - 6px);object-fit:cover;border-radius:inherit;display:block;background:#111}
+.kcc-play{position:absolute;right:12px;bottom:12px;z-index:5;width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.72);background:rgba(17,17,15,.64);color:#fff;display:grid;place-items:center;padding:0 0 1px 2px;cursor:pointer;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:background .2s ease,transform .2s ease}
+.kcc-play:hover{background:rgba(17,17,15,.88);transform:scale(1.04)}
+.kcc-play:focus-visible{outline:2px solid #fff;outline-offset:2px}
+@media(max-width:900px){.kcc-play{width:36px;height:36px;right:8px;bottom:8px;font-size:12px}}
+</style>
 </head>
 <body>
 <header class="topbar" id="topbar"><div class="identity mono"><b>●</b> MALIK_MANSOURI / RUNWAY</div><nav class="crumbs" aria-label="Deck navigation"><button class="crumb mono active" data-go="0">Intro</button><button class="crumb mono" data-go="2">Profile</button><button class="crumb mono" data-go="4">Work</button><button class="crumb mono" data-go="7">System</button><button class="crumb mono" data-go="8">Runway</button></nav><div class="counter mono"><span id="now">01</span> / 10</div></header><div class="progress"><i id="bar"></i></div>
@@ -18,11 +27,90 @@
 <section class="slide yellowbg" data-label="PROOF"><div class="proofGrid"><div><div class="kicker mono" style="color:#5f4c00">04 · NUMBERS / SIGNAL</div><h2 class="proofTitle display"><span class="outlineLine outline">PROOF.</span><span class="solidLine">NOT<br>PROMISES.</span></h2><div class="brandline mono">L'ORÉAL · SAINT LAURENT · SPOTIFY · HEETCH · AUDIBLE · YVES ROCHER · HONDA · VENUM · LOGITECH</div></div><div class="proofBox"><div class="proofStat"><b class="display">7+</b><span>years across influence & social</span></div><div class="proofStat"><b class="display">75–100</b><span>creators managed / month at peak volume</span></div><div class="proofStat"><b class="display">2,000+</b><span>creators in HI-VE Agency network</span></div><div class="proofStat"><b class="display">360°</b><span>scout → deal → brief → launch → measure</span></div></div></div><div class="footerline mono"><span>SELECTED SIGNALS</span><span>04 / 10</span></div></section>
 <section class="slide" data-label="SOS MALUS"><div class="caseGrid"><div><div class="kicker mono">05 · SUCCESS STORY</div><h2 class="caseTitle display">SOS<br>MALUS<span class="accent">.</span></h2><div class="objective"><b>OBJECTIVE</b><p>Create creator-led awareness in a category people rarely choose to watch.</p></div><div class="objective"><b>MY ROLE</b><p>Influencer campaign management · creator coordination · brand safety · campaign delivery.</p></div><div class="resultBig display">#1 INSURANCE<br>BRAND ON TIKTOK.<small>+ 2024 TikTok Awards nomination · Best Advertising Campaign</small></div></div><div class="phoneStage"><div class="phone one"><div class="screen warm">VIDEO / PHOTO<br>TO BE ADDED</div></div><div class="phone two"><div class="screen warm">CREATOR CONTENT<br>TO BE ADDED</div></div></div></div><div class="footerline mono"><span>SELECTED WORK · SOS MALUS</span><span>05 / 10</span></div></section>
 <section class="slide" data-label="HEETCH"><div class="caseGrid"><div><div class="kicker mono">06 · SUCCESS STORY</div><h2 class="caseTitle display">HEETCH<span class="accent">.</span></h2><div class="objective"><b>OBJECTIVE</b><p>Use creator entertainment to grow awareness and the brand’s social footprint.</p></div><div class="objective"><b>MY ROLE</b><p>Influencer & social campaign management · creator relationships · campaign execution.</p></div><div class="metricRow"><div class="metric"><b class="display">+12K</b><span>followers</span></div><div class="metric"><b class="display">+70K</b><span>likes</span></div><div class="metric"><b class="display">5M+</b><span>views</span></div></div></div><div class="phoneStage"><div class="phone one"><div class="screen pink">HEETCH PROFILE<br>TO BE ADDED</div></div><div class="phone two"><div class="screen pink">CREATOR VIDEO<br>TO BE ADDED</div></div></div></div><div class="footerline mono"><span>SELECTED WORK · HEETCH</span><span>06 / 10</span></div></section>
-<section class="slide" data-label="FORMATS"><div class="kicker mono">07 · FORMAT FIT</div><h2 class="formatsTitle display">ANYTHING IS<br><span class="accent">POSSIBLE.</span></h2><div class="formatGrid"><div class="format"><b class="display">STORYTELLING</b><small>SoBrico · <em>300K+ views</em></small><div class="miniPhone"><div>VIDEO<br>PLACEHOLDER</div></div></div><div class="format"><b class="display">STREET INTERVIEW</b><small>Shine · <em>73K+ views</em></small><div class="miniPhone"><div>VIDEO<br>PLACEHOLDER</div></div></div><div class="format"><b class="display">EDUCATION</b><small>Emma · <em>190K+ views</em></small><div class="miniPhone"><div>VIDEO<br>PLACEHOLDER</div></div></div><div class="format"><b class="display">VLOG</b><small>Korean Cultural Center · <em>250K+ views</em></small><div class="miniPhone"><video autoplay muted loop playsinline preload="metadata" aria-label="Korean Cultural Center creator campaign preview" src="/runway/assets/korean-cc-preview.mp4" style="position:absolute;inset:3px;width:calc(100% - 6px);height:calc(100% - 6px);object-fit:cover;border-radius:inherit;display:block;background:#111"></video></div></div></div><div class="footerline mono"><span>FORMAT / AUDIENCE / OBJECTIVE FIT</span><span>07 / 10</span></div></section>
+<section class="slide" data-label="FORMATS"><div class="kicker mono">07 · FORMAT FIT</div><h2 class="formatsTitle display">ANYTHING IS<br><span class="accent">POSSIBLE.</span></h2><div class="formatGrid"><div class="format"><b class="display">STORYTELLING</b><small>SoBrico · <em>300K+ views</em></small><div class="miniPhone"><div>VIDEO<br>PLACEHOLDER</div></div></div><div class="format"><b class="display">STREET INTERVIEW</b><small>Shine · <em>73K+ views</em></small><div class="miniPhone"><div>VIDEO<br>PLACEHOLDER</div></div></div><div class="format"><b class="display">EDUCATION</b><small>Emma · <em>190K+ views</em></small><div class="miniPhone"><div>VIDEO<br>PLACEHOLDER</div></div></div><div class="format"><b class="display">VLOG</b><small>Korean Cultural Center · <em>250K+ views</em></small><div class="miniPhone kcc-phone"><video id="kccVideo" autoplay muted loop playsinline preload="none" poster="/runway/korean-cultural-center-preview.jpg" aria-label="Korean Cultural Center creator campaign preview"></video><button id="kccPlay" class="kcc-play" type="button" aria-label="Play Korean Cultural Center video">▶</button></div></div></div><div class="footerline mono"><span>FORMAT / AUDIENCE / OBJECTIVE FIT</span><span>07 / 10</span></div></section>
 <section class="slide yellowbg" data-label="SYSTEM"><div class="kicker mono" style="color:#5f4c00">08 · END-TO-END</div><h2 class="systemTitle display">HOW I<br>WORK<span style="color:#fff">.</span></h2><div class="timeline"><div class="step"><div class="circle">01</div><b class="display">SCOUT</b><small>fit · relevance<br>growth potential</small></div><div class="step"><div class="circle">02</div><b class="display">PITCH</b><small>outreach · value<br>relationship</small></div><div class="step"><div class="circle">03</div><b class="display">NEGOTIATE</b><small>fee · affiliate<br>rights · terms</small></div><div class="step"><div class="circle">04</div><b class="display">BRIEF</b><small>direction · freedom<br>brand safety</small></div><div class="step"><div class="circle">05</div><b class="display">MEASURE</b><small>UTM · GA4 · ROI<br>watch time</small></div><div class="step"><div class="circle">06</div><b class="display">LEARN</b><small>hooks · talent<br>formats · next test</small></div></div><p class="systemNote">I like the unglamorous parts too: pipeline hygiene, follow-ups, contracts, paperwork, attribution and post-campaign learning. The relationship only works when the operation does.</p><div class="footerline mono"><span>OPERATING SYSTEM</span><span>08 / 10</span></div></section>
 <section class="slide" data-label="WHY RUNWAY"><div class="whyGrid"><div><div class="kicker mono">09 · WHY RUNWAY</div><h2 class="whyTitle display">CREATORS<br>ARE PART<br>OF THE<br><span class="outlined">PRODUCT STORY.</span></h2></div><div><p class="whyCopy">What excites me about Runway is the overlap between <strong>creator culture, filmmaking, design and AI.</strong> For a product that expands what people can make, creators are not just a distribution channel — they are one of the clearest ways to show what becomes possible.</p><div class="whyList"><div class="whyItem"><i>01</i><span>Brand objectives + creator realities: I understand both sides of the table.</span></div><div class="whyItem"><i>02</i><span>Hands-on end-to-end ownership: outreach, negotiation, contracts, launch and payment.</span></div><div class="whyItem"><i>03</i><span>Performance-minded without stripping creator marketing of what makes it native.</span></div><div class="whyItem"><i>04</i><span>Deep interest in generative video and the next phase of the creator economy.</span></div></div></div></div><div class="footerline mono"><span>RUNWAY · SOCIAL MEDIA SPECIALIST / INFLUENCER MARKETING</span><span>09 / 10</span></div></section>
 <section class="slide dark" data-label="CONTACT"><div class="contactGrid"><div><div class="kicker mono">— LET'S TALK</div><h2 class="contactTitle display">LET'S BUILD<br>WHAT CREATORS<br><span>TALK ABOUT NEXT.</span></h2><div class="contactMeta"><div><b>Email</b><a href="mailto:malik.mansouri@hotmail.fr">malik.mansouri@hotmail.fr</a></div><div><b>Location</b><p>France · Remote · Global teams</p></div></div></div><div class="lastFrame"></div></div><div class="footerline mono"><span>MALIK MANSOURI · END OF DECK</span><span>10 / 10</span></div></section>
 </div>
 <div class="hint mono">← → keyboard · wheel · swipe</div><div class="controls"><button class="arrow" id="prev" aria-label="Previous slide">←</button><button class="arrow" id="next" aria-label="Next slide">→</button></div>
 <script src="/runway/deck.js"></script>
+<script>
+(() => {
+  const video = document.getElementById('kccVideo');
+  const button = document.getElementById('kccPlay');
+  const slide = document.querySelector('.slide[data-label="FORMATS"]');
+  if (!video || !button || !slide) return;
+
+  const partUrls = Array.from({length: 9}, (_, i) => `/runway/media/kcc/part${String(i).padStart(2,'0')}.txt`);
+  let loadingPromise = null;
+  let objectUrl = null;
+
+  const syncButton = () => {
+    const playing = !video.paused && !video.ended;
+    button.textContent = playing ? '❚❚' : '▶';
+    button.setAttribute('aria-label', playing ? 'Pause Korean Cultural Center video' : 'Play Korean Cultural Center video');
+  };
+
+  const ensureVideo = () => {
+    if (video.src) return Promise.resolve();
+    if (loadingPromise) return loadingPromise;
+    loadingPromise = Promise.all(partUrls.map(async url => {
+      const response = await fetch(url);
+      if (!response.ok) throw new Error(`Unable to load ${url}`);
+      return response.text();
+    })).then(parts => {
+      const b64 = parts.join('').replace(/\s/g, '');
+      const binary = atob(b64);
+      const bytes = new Uint8Array(binary.length);
+      for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
+      objectUrl = URL.createObjectURL(new Blob([bytes], {type:'video/mp4'}));
+      video.src = objectUrl;
+      video.muted = true;
+      video.loop = true;
+      video.playsInline = true;
+      video.load();
+    }).catch(error => {
+      console.warn('KCC preview failed to load', error);
+      loadingPromise = null;
+      throw error;
+    });
+    return loadingPromise;
+  };
+
+  const playMuted = async () => {
+    try {
+      await ensureVideo();
+      video.muted = true;
+      await video.play();
+    } catch (_) {
+      syncButton();
+    }
+  };
+
+  button.addEventListener('click', async event => {
+    event.stopPropagation();
+    if (!video.src || video.paused) await playMuted();
+    else video.pause();
+    syncButton();
+  });
+  video.addEventListener('click', async () => {
+    if (!video.src || video.paused) await playMuted();
+    else video.pause();
+  });
+  video.addEventListener('play', syncButton);
+  video.addEventListener('pause', syncButton);
+
+  const observer = new IntersectionObserver(entries => {
+    for (const entry of entries) {
+      if (entry.isIntersecting && entry.intersectionRatio >= 0.45) playMuted();
+      else if (!video.paused) video.pause();
+    }
+  }, {threshold:[0,0.45,0.8]});
+  observer.observe(slide);
+
+  window.addEventListener('pagehide', () => { if (objectUrl) URL.revokeObjectURL(objectUrl); }, {once:true});
+  syncButton();
+})();
+</script>
+
 </body></html>
